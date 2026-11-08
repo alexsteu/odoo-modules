@@ -24,7 +24,7 @@ class SaleOrder(models.Model):
     @api.model
     def _cron_send_quote_followups(self):
         template = self.env.ref(
-            "sale_quote_followup.mail_template_quote_followup", raise_if_not_found=False
+            "ag_sale_quote_followup.mail_template_quote_followup", raise_if_not_found=False
         )
         if not template:
             return

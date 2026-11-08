@@ -20,7 +20,7 @@ class AccountMove(models.Model):
     @api.model
     def _cron_send_overdue_reminders(self):
         template = self.env.ref(
-            "account_invoice_overdue_reminder.mail_template_overdue_reminder",
+            "ag_invoice_overdue_reminder.mail_template_overdue_reminder",
             raise_if_not_found=False,
         )
         if not template:
