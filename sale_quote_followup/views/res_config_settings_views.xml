@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_quote_followup" model="ir.ui.view">
+        <field name="name">res.config.settings.quote.followup</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='quotation_order_setting_container']" position="inside">
+                <setting id="quote_followup_setting" string="Automatic quotation follow-up"
+                         help="E-mail customers who did not answer a sent quotation">
+                    <field name="quote_followup_enabled"/>
+                    <div class="content-group" invisible="not quote_followup_enabled">
+                        <div class="mt8">
+                            <label for="quote_followup_days" string="After"/>
+                            <field name="quote_followup_days" class="oe_inline"/> days,
+                            <label for="quote_followup_max" string="at most"/>
+                            <field name="quote_followup_max" class="oe_inline"/> times
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

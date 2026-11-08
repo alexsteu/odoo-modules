@@ -1,0 +1,21 @@
+{
+    "name": "Automatic Quotation Follow-up",
+    "summary": "Send an automatic reminder e-mail to customers who did not answer a quotation",
+    "version": "17.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale_management", "mail"],
+    "data": [
+        "data/mail_template.xml",
+        "data/ir_cron.xml",
+        "views/res_config_settings_views.xml",
+        "views/sale_order_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}
