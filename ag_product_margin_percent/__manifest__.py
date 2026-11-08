@@ -1,0 +1,16 @@
+{
+    "name": "Product Margin % in List",
+    "summary": "See the margin percentage of each product next to its sales price",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["product"],
+    "data": ["views/product_template_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

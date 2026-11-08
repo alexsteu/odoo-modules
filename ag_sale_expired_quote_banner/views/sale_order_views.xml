@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_expired_banner" model="ir.ui.view">
+        <field name="name">view_order_form_expired_banner</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <field name="is_expired" invisible="1"/>
+                <div class="alert alert-danger text-center mb-0" role="alert"
+                     invisible="not is_expired or state not in ('draft', 'sent')">
+                    This quotation has expired: its validity date is past. Update the prices and the date before sending or confirming it.
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

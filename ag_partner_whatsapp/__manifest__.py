@@ -1,0 +1,16 @@
+{
+    "name": "WhatsApp Button on Contacts",
+    "summary": "Open a WhatsApp chat with a contact in one click from its phone number",
+    "version": "18.0.1.0.0",
+    "category": "Sales/CRM",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["base", "contacts"],
+    "data": ["views/res_partner_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

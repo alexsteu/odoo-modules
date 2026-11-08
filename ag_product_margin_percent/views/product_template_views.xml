@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_template_tree_margin" model="ir.ui.view">
+        <field name="name">product_template_tree_margin</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="after">
+                <field name="margin_percent" optional="show" decoration-danger="margin_percent &lt; 0"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

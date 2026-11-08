@@ -1,0 +1,16 @@
+{
+    "name": "Duplicate Contact Warning",
+    "summary": "Warn when you type an e-mail that already belongs to another contact",
+    "version": "18.0.1.0.0",
+    "category": "Sales/CRM",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["base", "contacts"],
+    "data": [],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

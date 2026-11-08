@@ -1,0 +1,16 @@
+{
+    "name": "CRM Opportunity Age",
+    "summary": "Show how many days each opportunity has been open in the CRM list",
+    "version": "18.0.1.0.0",
+    "category": "Sales/CRM",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["crm"],
+    "data": ["views/crm_lead_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

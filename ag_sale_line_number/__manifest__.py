@@ -1,0 +1,16 @@
+{
+    "name": "Sale Order Line Numbers",
+    "summary": "Show a line number on each sales order and quotation line",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale"],
+    "data": ["views/sale_order_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

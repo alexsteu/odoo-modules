@@ -1,0 +1,16 @@
+{
+    "name": "VAT Number Required on Company Invoices",
+    "summary": "Block posting a customer invoice to a company that has no VAT number",
+    "version": "18.0.1.0.0",
+    "category": "Accounting/Accounting",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["account"],
+    "data": [],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

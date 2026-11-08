@@ -1,0 +1,16 @@
+{
+    "name": "Minimum Order Amount",
+    "summary": "Prevent the confirmation of sales orders below a minimum amount",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale"],
+    "data": ["views/res_config_settings_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

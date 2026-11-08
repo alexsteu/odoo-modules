@@ -1,0 +1,16 @@
+{
+    "name": "Customer Since",
+    "summary": "Show the date of the first confirmed sales order on each customer",
+    "version": "18.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale"],
+    "data": ["views/res_partner_views.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}
