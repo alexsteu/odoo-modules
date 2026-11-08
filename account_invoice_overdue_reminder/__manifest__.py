@@ -1,0 +1,21 @@
+{
+    "name": "Overdue Invoice Reminder (Community)",
+    "summary": "Automatically e-mail customers whose invoices are overdue, in Odoo Community",
+    "version": "17.0.1.0.0",
+    "category": "Accounting/Accounting",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["account", "mail"],
+    "data": [
+        "data/mail_template.xml",
+        "data/ir_cron.xml",
+        "views/res_config_settings_views.xml",
+        "views/account_move_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}
