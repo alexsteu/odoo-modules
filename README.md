@@ -3,6 +3,7 @@
 By Alexandre Gabriel, independent Odoo developer. Tested on Odoo 18 (Community).
 
 - `ag_ai_quote_from_email`: Paste a customer e-mail: AI finds the customer and your products and fills the quotation for you.
+- `ag_ai_vendor_bill`: Upload a supplier invoice PDF or photo: AI reads it and fills the vendor bill, also in Odoo Community.
 - `ag_crm_lead_age`: Show how many days each opportunity has been open in the CRM list.
 - `ag_invoice_overdue_reminder`: Automatically e-mail customers whose invoices are overdue, in Odoo Community.
 - `ag_invoice_vat_required`: Block posting a customer invoice to a company that has no VAT number.

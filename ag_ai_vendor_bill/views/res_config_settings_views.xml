@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_ag_ai_bill" model="ir.ui.view">
+        <field name="name">res.config.settings.ag.ai.bill</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='account_vendor_bills']" position="inside">
+                <setting id="ag_ai_bill_setting" string="AI bill reader"
+                         help="Read supplier invoices (PDF, photo) with Claude or ChatGPT, using your own API key">
+                    <div class="content-group">
+                        <div class="row mt8">
+                            <label for="ag_ai_bill_provider" class="col-lg-4 o_light_label"/>
+                            <field name="ag_ai_bill_provider"/>
+                        </div>
+                        <div class="row">
+                            <label for="ag_ai_bill_api_key" class="col-lg-4 o_light_label"/>
+                            <field name="ag_ai_bill_api_key" password="True"/>
+                        </div>
+                        <div class="row">
+                            <label for="ag_ai_bill_model" class="col-lg-4 o_light_label"/>
+                            <field name="ag_ai_bill_model" placeholder="default"/>
+                        </div>
+                    </div>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>
