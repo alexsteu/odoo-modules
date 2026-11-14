@@ -1,0 +1,20 @@
+{
+    "name": "Product Brand",
+    "summary": "Add a brand to your products, then filter and group sales and products by brand",
+    "version": "17.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale"],
+    "data": [
+        "security/ir.model.access.csv",
+        "views/product_brand_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

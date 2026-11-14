@@ -1,10 +1,11 @@
 {
     "name": "Customer Since",
     "summary": "Show the date of the first confirmed sales order on each customer",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["sale"],
     "data": ["views/res_partner_views.xml"],

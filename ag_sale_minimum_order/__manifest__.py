@@ -1,10 +1,11 @@
 {
     "name": "Minimum Order Amount",
     "summary": "Prevent the confirmation of sales orders below a minimum amount",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["sale"],
     "data": ["views/res_config_settings_views.xml"],

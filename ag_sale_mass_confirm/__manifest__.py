@@ -1,0 +1,17 @@
+{
+    "name": "Confirm Several Quotations at Once",
+    "summary": "Select quotations in the list and confirm them all in one click",
+    "version": "17.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale"],
+    "data": ["data/ir_actions_server.xml"],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}

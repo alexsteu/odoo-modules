@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="edit_project_ag_profitability" model="ir.ui.view">
+        <field name="name">project.project.form.ag.profitability</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Profitability" name="ag_profitability" groups="project.group_project_manager">
+                    <group>
+                        <group string="Time">
+                            <field name="ag_hours_spent" widget="float_time"/>
+                            <field name="ag_timesheet_cost"/>
+                        </group>
+                        <group string="Result">
+                            <field name="ag_revenue"/>
+                            <field name="ag_other_costs"/>
+                            <field name="ag_margin" decoration-danger="ag_margin &lt; 0" decoration-success="ag_margin &gt; 0"/>
+                            <field name="ag_margin_percent"/>
+                        </group>
+                    </group>
+                    <p class="text-muted">Timesheet cost uses the hourly cost of each employee. Revenue and other costs come from the analytic account of the project (invoices and vendor bills with that analytic distribution).</p>
+                </page>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_project_ag_profitability" model="ir.ui.view">
+        <field name="name">project.project.list.ag.profitability</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="ag_hours_spent" widget="float_time" optional="show" groups="project.group_project_manager"/>
+                <field name="ag_margin" optional="show" groups="project.group_project_manager" decoration-danger="ag_margin &lt; 0"/>
+                <field name="ag_margin_percent" optional="hide" groups="project.group_project_manager"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

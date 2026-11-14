@@ -1,10 +1,11 @@
 {
     "name": "Expired Quotation Warning",
     "summary": "Show a clear warning on quotations whose validity date has passed",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["sale"],
     "data": ["views/sale_order_views.xml"],

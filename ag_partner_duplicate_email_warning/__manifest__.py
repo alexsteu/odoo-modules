@@ -1,10 +1,11 @@
 {
     "name": "Duplicate Contact Warning",
     "summary": "Warn when you type an e-mail that already belongs to another contact",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales/CRM",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["base", "contacts"],
     "data": [],

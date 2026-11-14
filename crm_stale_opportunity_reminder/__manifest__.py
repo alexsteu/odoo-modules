@@ -1,10 +1,11 @@
 {
     "name": "Forgotten Opportunity Reminder",
     "summary": "Create a follow-up activity on CRM opportunities nobody touched for a while",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.0.1",
     "category": "Sales/CRM",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["crm"],
     "data": [
