@@ -1,0 +1,22 @@
+{
+    "name": "AI Vendor Bill Reader (ChatGPT, Claude) for Community",
+    "summary": "Upload a supplier invoice PDF or photo: AI reads it and fills the vendor bill, also in Odoo Community",
+    "version": "17.0.1.0.0",
+    "category": "Accounting/Accounting",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["account"],
+    "external_dependencies": {"python": ["requests"]},
+    "data": [
+        "data/ir_actions_server.xml",
+        "views/account_move_views.xml",
+        "views/res_config_settings_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}
