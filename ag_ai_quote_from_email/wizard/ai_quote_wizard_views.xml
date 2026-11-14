@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ag_ai_quote_wizard_form" model="ir.ui.view">
+        <field name="name">ag.ai.quote.wizard.form</field>
+        <field name="model">ag.ai.quote.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Quotation from e-mail">
+                <p class="text-muted">Paste the customer's e-mail. The AI finds the customer and your products, then fills the quotation. Always check it before sending.</p>
+                <field name="order_id" invisible="1"/>
+                <field name="email_text" nolabel="1" placeholder="Hello, we would need 20 chairs and 4 tables for our new office..."/>
+                <footer>
+                    <button name="action_fill" type="object" string="Fill the quotation" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record id="ag_ai_quote_wizard_action" model="ir.actions.act_window">
+        <field name="name">Quotation from e-mail (AI)</field>
+        <field name="res_model">ag.ai.quote.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+    <menuitem id="menu_ag_ai_quote" name="Quotation from e-mail (AI)" action="ag_ai_quote_wizard_action"
+              parent="sale.sale_order_menu" sequence="3" groups="sales_team.group_sale_salesman"/>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_ag_ai_quote" model="ir.ui.view">
+        <field name="name">sale.order.form.ag.ai.quote</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="inside">
+                <button name="%(ag_ai_quote_wizard_action)d" type="action" string="Fill with AI"
+                        invisible="state not in ('draft', 'sent')"
+                        context="{'default_order_id': id}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
