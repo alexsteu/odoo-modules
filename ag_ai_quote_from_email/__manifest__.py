@@ -1,0 +1,23 @@
+{
+    "name": "AI Quotation from Customer E-mail (ChatGPT, Claude)",
+    "summary": "Paste a customer e-mail: AI finds the customer and your products and fills the quotation for you",
+    "version": "17.0.1.0.0",
+    "category": "Sales/Sales",
+    "author": "Alexandre Gabriel",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
+    "license": "LGPL-3",
+    "depends": ["sale_management"],
+    "external_dependencies": {"python": ["requests"]},
+    "data": [
+        "security/ir.model.access.csv",
+        "wizard/ai_quote_wizard_views.xml",
+        "views/sale_order_views.xml",
+        "views/res_config_settings_views.xml",
+    ],
+    "images": ["static/description/banner.png"],
+    "price": 0,
+    "currency": "EUR",
+    "installable": True,
+    "application": False,
+}
