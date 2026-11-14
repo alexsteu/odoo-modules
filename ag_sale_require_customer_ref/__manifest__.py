@@ -1,10 +1,11 @@
 {
     "name": "Require Customer PO Number",
     "summary": "Block the confirmation of a sales order without customer reference for customers who require a PO number",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.0.1",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
-    "website": "https://alexandregabriel.ch",
+    "website": "https://alexandregabriel.ch/?v=odoo",
+    "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["sale"],
     "data": ["views/res_partner_views.xml"],
