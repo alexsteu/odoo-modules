@@ -38,7 +38,7 @@ Upgrade the modules as usual (Apps > the module > Upgrade). Two things are delib
 
 ## Languages
 
-English and French (`i18n/fr.po` in each module). The e-mails sent to your customers (quotation follow-up, overdue invoice reminder) are in French for customers whose language is French, in English otherwise.
+English and French (`i18n/fr.po` in each module that has text to translate). The e-mails sent to your customers (quotation follow-up, overdue invoice reminder) are in French for customers whose language is French, in English otherwise.
 
 ## Need one adapted to your company?
 
