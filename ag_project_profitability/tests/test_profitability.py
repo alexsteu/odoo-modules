@@ -1,0 +1,132 @@
+from odoo import Command, fields
+from odoo.tests import tagged
+
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+
+
+@tagged("post_install", "-at_install")
+class TestProjectProfitability(AccountTestInvoicingCommon):
+
+    @classmethod
+    def setUpClass(cls):
+        super().setUpClass()
+        cls.employee = cls.env["hr.employee"].create({
+            "name": "Camille Technician",
+            "hourly_cost": 50.0,
+        })
+        cls.project = cls.env["project.project"].create({
+            "name": "Kitchen renovation",
+            "allow_timesheets": True,
+        })
+        cls.task = cls.env["project.task"].create({
+            "name": "Installation",
+            "project_id": cls.project.id,
+        })
+
+    @classmethod
+    def _analytic(cls, project):
+        return project._ag_analytic_account()
+
+    def _timesheet(self, hours, project=None):
+        project = project or self.project
+        return self.env["account.analytic.line"].create({
+            "name": "Work on site",
+            "project_id": project.id,
+            "task_id": self.task.id if project == self.project else False,
+            "employee_id": self.employee.id,
+            "unit_amount": hours,
+            "date": fields.Date.today(),
+        })
+
+    def _invoice(self, move_type, amount, project=None):
+        project = project or self.project
+        account = self._analytic(project)
+        move = self.env["account.move"].create({
+            "move_type": move_type,
+            "partner_id": self.partner_a.id,
+            "invoice_date": fields.Date.today(),
+            "invoice_line_ids": [Command.create({
+                "name": "Line",
+                "quantity": 1,
+                "price_unit": amount,
+                "tax_ids": [Command.clear()],
+                "analytic_distribution": {str(account.id): 100},
+            })],
+        })
+        move.action_post()
+        return move
+
+    def test_empty_project_shows_zero(self):
+        self.assertEqual(self.project.ag_hours_spent, 0.0)
+        self.assertEqual(self.project.ag_timesheet_cost, 0.0)
+        self.assertEqual(self.project.ag_revenue, 0.0)
+        self.assertEqual(self.project.ag_other_costs, 0.0)
+        self.assertEqual(self.project.ag_margin, 0.0)
+        self.assertEqual(self.project.ag_margin_percent, 0.0)
+
+    def test_hours_and_timesheet_cost(self):
+        self._timesheet(3.0)
+        self._timesheet(1.5)
+        self.project.invalidate_recordset()
+        self.assertAlmostEqual(self.project.ag_hours_spent, 4.5)
+        self.assertAlmostEqual(self.project.ag_timesheet_cost, 225.0)
+        self.assertAlmostEqual(self.project.ag_margin, -225.0)
+        self.assertEqual(self.project.ag_margin_percent, 0.0, "no revenue: no percentage")
+
+    def test_revenue_other_costs_and_margin(self):
+        self.assertTrue(self._analytic(self.project), "a timesheet project gets an analytic account")
+        self._timesheet(4.0)                      # 200 of timesheet cost
+        self._invoice("out_invoice", 1000.0)      # revenue
+        self._invoice("in_invoice", 300.0)        # other costs
+        self.project.invalidate_recordset()
+        self.assertAlmostEqual(self.project.ag_revenue, 1000.0)
+        self.assertAlmostEqual(self.project.ag_other_costs, 300.0)
+        self.assertAlmostEqual(self.project.ag_timesheet_cost, 200.0)
+        self.assertAlmostEqual(self.project.ag_margin, 500.0)
+        self.assertAlmostEqual(self.project.ag_margin_percent, 50.0)
+
+    def test_credit_note_reduces_revenue(self):
+        self._invoice("out_invoice", 1000.0)
+        self._invoice("out_refund", 200.0)
+        self.project.invalidate_recordset()
+        self.assertAlmostEqual(self.project.ag_revenue, 800.0)
+        self.assertAlmostEqual(self.project.ag_other_costs, 0.0)
+        self.assertAlmostEqual(self.project.ag_margin, 800.0)
+
+    def test_projects_do_not_mix(self):
+        other = self.env["project.project"].create({"name": "Other site", "allow_timesheets": True})
+        self._timesheet(2.0)
+        self._timesheet(7.0, project=other)
+        self._invoice("out_invoice", 400.0, project=other)
+        (self.project | other).invalidate_recordset()
+        self.assertAlmostEqual(self.project.ag_hours_spent, 2.0)
+        self.assertAlmostEqual(self.project.ag_revenue, 0.0)
+        self.assertAlmostEqual(other.ag_hours_spent, 7.0)
+        self.assertAlmostEqual(other.ag_revenue, 400.0)
+
+    def test_project_without_analytic_account(self):
+        project = self.env["project.project"].create({"name": "No timesheet", "allow_timesheets": False})
+        account_field = "account_id" if "account_id" in project._fields else "analytic_account_id"
+        project[account_field] = False
+        self.assertEqual(project.ag_revenue, 0.0)
+        self.assertEqual(project.ag_margin, 0.0)
+
+    def test_list_reads_many_projects_with_few_queries(self):
+        projects = self.project
+        for index in range(15):
+            projects |= self.env["project.project"].create({"name": "P%s" % index, "allow_timesheets": True})
+        self._timesheet(1.0)
+        projects.invalidate_recordset()
+        self.env.flush_all()
+        start = self.env.cr.sql_log_count
+        projects.mapped("ag_margin")
+        used = self.env.cr.sql_log_count - start
+        self.assertLess(used, 12, "the list view must not run several queries per project (%s used)" % used)
+
+    def test_views_show_the_figures(self):
+        form = self.env.ref("project.edit_project").get_combined_arch()
+        self.assertIn('name="ag_profitability"', form)
+        self.assertIn('name="ag_margin_percent"', form)
+        listing = self.env.ref("project.view_project").get_combined_arch()
+        self.assertIn('name="ag_hours_spent"', listing)
+        self.assertIn('name="ag_margin"', listing)
