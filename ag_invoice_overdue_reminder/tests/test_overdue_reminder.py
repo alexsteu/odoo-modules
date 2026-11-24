@@ -80,6 +80,9 @@ class TestOverdueReminder(AccountTestInvoicingCommon, MockEmail):
         with freeze_time("2026-03-05 08:00:00"):
             invoice.invalidate_recordset()
             self.assertEqual(invoice.overdue_reminder_next, date(2026, 3, 13))
+        with freeze_time("2026-03-15 08:00:00"):
+            invoice.invalidate_recordset()
+            self.assertEqual(invoice.overdue_reminder_next, date(2026, 3, 15), "already due: it leaves today, never a past date")
         self._run("2026-03-13 08:00:00")
         with freeze_time("2026-03-14 08:00:00"):
             invoice.invalidate_recordset()
@@ -148,6 +151,15 @@ class TestOverdueReminder(AccountTestInvoicingCommon, MockEmail):
         self.assertEqual(len(mails), 1)
         self.assertEqual(good.overdue_reminder_count, 1)
         self.assertEqual(broken.overdue_reminder_count, 0)
+
+    def test_greeting_names_a_person_but_not_a_company(self):
+        self._invoice()
+        body = self._run("2026-03-13 08:00:00")[0]["body"]
+        self.assertIn("Hello Garage Rochat,", body)
+        self.customer.is_company = True
+        body = self._run("2026-03-20 08:00:00")[0]["body"]
+        self.assertIn("Hello,", body)
+        self.assertNotIn("Hello Garage Rochat", body)
 
     def test_french_customer_gets_a_french_reminder(self):
         self.env["res.lang"]._activate_lang("fr_FR")

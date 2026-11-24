@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20261112\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 19:35+0000\n"
-"PO-Revision-Date: 2026-11-24 19:35+0000\n"
+"POT-Creation-Date: 2026-11-24 20:10+0000\n"
+"PO-Revision-Date: 2026-11-24 20:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: model:mail.template,body_html:ag_invoice_overdue_reminder.mail_template_overdue_reminder
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
-"    <p>Hello <t t-out=\"object.partner_id.name or ''\"/>,</p>\n"
+"    <p>Hello<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
 "    <p>Unless we missed your payment, invoice <strong t-out=\"object.name or ''\"/>\n"
 "        was due on <t t-out=\"format_date(object.invoice_date_due) or ''\"/>.\n"
 "        The amount still open is <strong t-out=\"format_amount(object.amount_residual, object.currency_id) or ''\"/>.</p>\n"
@@ -32,7 +32,7 @@ msgid ""
 "        "
 msgstr ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
-"    <p>Bonjour <t t-out=\"object.partner_id.name or ''\"/>,</p>\n"
+"    <p>Bonjour<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
 "    <p>Sauf erreur de notre part, la facture <strong t-out=\"object.name or ''\"/>\n"
 "        était à régler pour le <t t-out=\"format_date(object.invoice_date_due) or ''\"/>.\n"
 "        Le montant encore ouvert est de <strong t-out=\"format_amount(object.amount_residual, object.currency_id) or ''\"/>.</p>\n"
@@ -42,6 +42,18 @@ msgstr ""
 "    <p>Cordialement,<br/><t t-out=\"object.company_id.name or ''\"/></p>\n"
 "</div>\n"
 "        "
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_next
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_next
+msgid ""
+"Day the next reminder will be e-mailed if the invoice is still unpaid. Empty"
+" when none is planned: invoice paid, reminders stopped, maximum reached or "
+"customer without e-mail."
+msgstr ""
+"Date d'envoi du prochain rappel si la facture reste impayée. Vide quand "
+"aucun n'est prévu : facture payée, rappels arrêtés, maximum atteint ou "
+"client sans e-mail."
 
 #. module: ag_invoice_overdue_reminder
 #: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_days
@@ -152,18 +164,6 @@ msgstr "Rappels envoyés"
 msgid "Tick to never send automatic overdue reminders for this invoice."
 msgstr ""
 "Cochez pour ne jamais envoyer de rappel automatique pour cette facture."
-
-#. module: ag_invoice_overdue_reminder
-#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_next
-#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_next
-msgid ""
-"When the next reminder will be e-mailed if the invoice is still unpaid. "
-"Empty when none is planned: invoice paid, reminders stopped, maximum reached"
-" or customer without e-mail."
-msgstr ""
-"Date d'envoi du prochain rappel si la facture reste impayée. Vide quand "
-"aucun n'est prévu : facture payée, rappels arrêtés, maximum atteint ou "
-"client sans e-mail."
 
 #. module: ag_invoice_overdue_reminder
 #: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder

@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 
 from freezegun import freeze_time
 
@@ -86,7 +86,10 @@ class TestQuoteFollowup(TransactionCase, MockEmail):
         order = self._quotation()
         with freeze_time("2026-03-03 12:00:00"):
             order.invalidate_recordset()
-            self.assertEqual(order.followup_next_date, datetime(2026, 3, 7, 9, 0))
+            self.assertEqual(order.followup_next_date, date(2026, 3, 7))
+        with freeze_time("2026-03-09 07:00:00"):
+            order.invalidate_recordset()
+            self.assertEqual(order.followup_next_date, date(2026, 3, 9), "already due: it leaves today, never a past date")
         order.followup_stop = True
         with freeze_time("2026-03-03 12:00:00"):
             order.invalidate_recordset()
@@ -176,6 +179,16 @@ class TestQuoteFollowup(TransactionCase, MockEmail):
         self.assertEqual(len(mails), 1)
         self.assertEqual(good.followup_count, 1)
         self.assertEqual(broken.followup_count, 0)
+
+    def test_greeting_names_a_person_but_not_a_company(self):
+        """"Hello Boulangerie Martin SA," is not how a salesperson writes."""
+        self._quotation()
+        body = self._to_customer(self._run("2026-03-07 09:30:00"))[0]["body"]
+        self.assertIn("Hello Boulangerie Martin,", body)
+        self.customer.is_company = True
+        body = self._to_customer(self._run("2026-03-12 09:30:00"))[0]["body"]
+        self.assertIn("Hello,", body)
+        self.assertNotIn("Hello Boulangerie Martin", body)
 
     def test_french_customer_gets_a_french_reminder(self):
         self.env["res.lang"]._activate_lang("fr_FR")

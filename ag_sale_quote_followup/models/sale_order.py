@@ -24,10 +24,10 @@ class SaleOrder(models.Model):
         copy=False,
         help="Tick to never send automatic reminders for this quotation.",
     )
-    followup_next_date = fields.Datetime(
+    followup_next_date = fields.Date(
         string="Next automatic follow-up",
         compute="_compute_followup_next_date",
-        help="When the next reminder will be e-mailed to the customer. Empty when none is planned: "
+        help="Day the next reminder will be e-mailed to the customer. Empty when none is planned: "
              "quotation not sent, follow-up stopped, maximum reached, quotation expired, customer "
              "without e-mail, or customer who already answered.",
     )
@@ -102,8 +102,11 @@ class SaleOrder(models.Model):
                  "validity_date", "partner_id")
     def _compute_followup_next_date(self):
         next_dates = self._followup_next_dates()
+        today = fields.Date.context_today(self)
         for order in self:
-            order.followup_next_date = next_dates.get(order.id, False)
+            due = next_dates.get(order.id)
+            # a follow-up that is already due leaves with the next daily run: show today, not a past date
+            order.followup_next_date = max(fields.Datetime.context_timestamp(order, due).date(), today) if due else False
 
     # ------------------------------------------------------------------ daily job
     @api.model

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 18.0-20261112\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-24 19:35+0000\n"
-"PO-Revision-Date: 2026-11-24 19:35+0000\n"
+"POT-Creation-Date: 2026-11-24 20:10+0000\n"
+"PO-Revision-Date: 2026-11-24 20:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: model:mail.template,body_html:ag_sale_quote_followup.mail_template_quote_followup
 msgid ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
-"    <p>Hello <t t-out=\"object.partner_id.name or ''\"/>,</p>\n"
+"    <p>Hello<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
 "    <p>I am coming back to you about quotation <strong t-out=\"object.name or ''\"/>\n"
 "        (<t t-out=\"format_amount(object.amount_total, object.currency_id) or ''\"/>).</p>\n"
 "    <p>Do you have any question, or would you like me to adjust something?\n"
@@ -31,7 +31,7 @@ msgid ""
 "        "
 msgstr ""
 "<div style=\"margin: 0px; padding: 0px;\">\n"
-"    <p>Bonjour <t t-out=\"object.partner_id.name or ''\"/>,</p>\n"
+"    <p>Bonjour<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
 "    <p>Je reviens vers vous au sujet du devis <strong t-out=\"object.name or ''\"/>\n"
 "        (<t t-out=\"format_amount(object.amount_total, object.currency_id) or ''\"/>).</p>\n"
 "    <p>Avez-vous des questions, ou souhaitez-vous que j'adapte quelque chose ?\n"
@@ -52,6 +52,17 @@ msgstr "Après"
 #: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
 msgid "Automatic quotation follow-up"
 msgstr "Relance automatique des devis"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_next_date
+msgid ""
+"Day the next reminder will be e-mailed to the customer. Empty when none is "
+"planned: quotation not sent, follow-up stopped, maximum reached, quotation "
+"expired, customer without e-mail, or customer who already answered."
+msgstr ""
+"Date d'envoi de la prochaine relance au client. Vide quand aucune n'est "
+"prévue : devis non envoyé, relances arrêtées, maximum atteint, devis expiré,"
+" client sans e-mail ou client qui a déjà répondu."
 
 #. module: ag_sale_quote_followup
 #: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
@@ -150,17 +161,6 @@ msgstr ""
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_stop
 msgid "Tick to never send automatic reminders for this quotation."
 msgstr "Cochez pour ne jamais envoyer de relance automatique pour ce devis."
-
-#. module: ag_sale_quote_followup
-#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_next_date
-msgid ""
-"When the next reminder will be e-mailed to the customer. Empty when none is "
-"planned: quotation not sent, follow-up stopped, maximum reached, quotation "
-"expired, customer without e-mail, or customer who already answered."
-msgstr ""
-"Date d'envoi de la prochaine relance au client. Vide quand aucune n'est "
-"prévue : devis non envoyé, relances arrêtées, maximum atteint, devis expiré,"
-" client sans e-mail ou client qui a déjà répondu."
 
 #. module: ag_sale_quote_followup
 #: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup

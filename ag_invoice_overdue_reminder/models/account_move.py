@@ -20,7 +20,7 @@ class AccountMove(models.Model):
     overdue_reminder_next = fields.Date(
         string="Next automatic reminder",
         compute="_compute_overdue_reminder_next",
-        help="When the next reminder will be e-mailed if the invoice is still unpaid. Empty when none "
+        help="Day the next reminder will be e-mailed if the invoice is still unpaid. Empty when none "
              "is planned: invoice paid, reminders stopped, maximum reached or customer without e-mail.",
     )
 
@@ -56,8 +56,11 @@ class AccountMove(models.Model):
                  "overdue_reminder_count", "overdue_reminder_last", "partner_id")
     def _compute_overdue_reminder_next(self):
         next_dates = self._overdue_reminder_next_dates()
+        today = fields.Date.context_today(self)
         for invoice in self:
-            invoice.overdue_reminder_next = next_dates.get(invoice.id, False)
+            due = next_dates.get(invoice.id)
+            # a reminder that is already due leaves with the next daily run: show today, not a past date
+            invoice.overdue_reminder_next = max(due, today) if due else False
 
     @api.model
     def _cron_send_overdue_reminders(self):

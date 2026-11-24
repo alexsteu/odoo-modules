@@ -10,7 +10,7 @@
         <field name="auto_delete" eval="True"/>
         <field name="body_html" type="html">
 <div style="margin: 0px; padding: 0px;">
-    <p>Hello <t t-out="object.partner_id.name or ''"/>,</p>
+    <p>Hello<t t-if="not object.partner_id.is_company"> <t t-out="object.partner_id.name or ''"/></t>,</p>
     <p>Unless we missed your payment, invoice <strong t-out="object.name or ''"/>
         was due on <t t-out="format_date(object.invoice_date_due) or ''"/>.
         The amount still open is <strong t-out="format_amount(object.amount_residual, object.currency_id) or ''"/>.</p>
