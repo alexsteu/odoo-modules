@@ -15,6 +15,7 @@ class ResCompany(models.Model):
     overdue_reminder_start_date = fields.Date(
         string="Remind invoices due since",
         default=fields.Date.context_today,
-        help="Invoices due before this date are never reminded automatically. It is set to the day "
-             "the module is installed, so that old unpaid invoices are not chased by surprise.",
+        help="Invoices due before this date are never reminded automatically. On a new installation it "
+             "is set to the day the module is installed, so that old unpaid invoices are not chased by "
+             "surprise. Leave it empty to remind every unpaid invoice.",
     )

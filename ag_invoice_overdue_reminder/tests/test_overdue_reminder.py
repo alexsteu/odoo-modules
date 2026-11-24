@@ -2,6 +2,7 @@ from datetime import date
 
 from freezegun import freeze_time
 
+from odoo.modules.migration import load_script
 from odoo.tests import tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
@@ -132,6 +133,38 @@ class TestOverdueReminder(AccountTestInvoicingCommon, MockEmail):
         self.assertEqual(len(mails), 1)
         self.assertIn(recent.name, mails[0]["subject"])
         self.assertEqual(old.overdue_reminder_count, 0)
+
+    def test_empty_start_date_means_no_limit(self):
+        self.env.company.overdue_reminder_start_date = False
+        old = self._invoice(due="2025-11-20")
+        self.assertEqual(len(self._run("2026-03-20 08:00:00")), 1)
+        self.assertEqual(old.overdue_reminder_count, 1)
+
+    # ------------------------------------------------------------------ upgrade from 1.0.x
+    def _upgrade_script(self):
+        return load_script(
+            "ag_invoice_overdue_reminder/migrations/1.1.0/post-migrate.py", "ag_overdue_post_migrate")
+
+    def test_upgrade_keeps_the_reminders_in_progress(self):
+        """Upgrading from 1.0.x must not stop the reminders of the invoices already overdue."""
+        invoice = self._invoice()                                   # due on 10 March
+        self.assertEqual(len(self._run("2026-03-13 08:00:00")), 1)
+        # what the upgrade does to the new column: it takes its default, the day of the upgrade
+        self.env.company.overdue_reminder_start_date = "2026-03-15"
+        self.assertFalse(self._run("2026-03-20 08:00:00"), "without the script, the second reminder is lost")
+
+        self._upgrade_script().migrate(self.env.cr, "17.0.1.0.1")
+        self.env.invalidate_all()
+        self.assertFalse(self.env.company.overdue_reminder_start_date, "empty: no limit, as in 1.0.x")
+        self.assertEqual(len(self._run("2026-03-20 08:00:00")), 1, "the reminder in progress goes on")
+        self.assertEqual(invoice.overdue_reminder_count, 2)
+
+    def test_upgrade_script_does_nothing_on_a_new_installation(self):
+        self.env.company.overdue_reminder_start_date = "2026-03-15"
+        self.env.flush_all()
+        self._upgrade_script().migrate(self.env.cr, None)
+        self.env.invalidate_all()
+        self.assertEqual(self.env.company.overdue_reminder_start_date, date(2026, 3, 15))
 
     # ------------------------------------------------------------------ robustness and language
     def test_one_failure_does_not_block_the_other_invoices(self):

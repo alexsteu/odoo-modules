@@ -124,9 +124,10 @@ msgstr ""
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_res_company__quote_followup_start_date
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
 msgid ""
-"Quotations sent before this date are never followed up automatically. It is "
-"set to the day the module is installed, so that old quotations are not "
-"chased by surprise."
+"Quotations sent before this date are never followed up automatically. On a "
+"new installation it is set to the day the module is installed, so that old "
+"quotations are not chased by surprise. Leave it empty to follow up every "
+"sent quotation."
 msgstr ""
 
 #. module: ag_sale_quote_followup
