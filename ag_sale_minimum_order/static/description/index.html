@@ -1,27 +1,62 @@
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan">Minimum Order Amount</h2>
-    <h3 class="oe_slogan">Stop accepting orders that cost you more than they earn</h3>
-    <p style="text-align:center;margin-top:8px"><i>Free module by an independent Odoo developer. Need it adapted to your company? <a href="#ag-custom">See below</a>.</i></p>
-    <div class="oe_span12">
-      <ul>
-        <li>Set a minimum untaxed amount in Sales &gt; Configuration &gt; Settings.</li>
-        <li>Quotations below this amount cannot be confirmed; the user gets a clear message.</li>
-        <li>0 = no minimum. Applies to orders in the company currency.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="oe_container oe_dark" id="ag-custom">
-  <div class="oe_row oe_spaced" style="text-align:center">
-    <h2 class="oe_slogan">Want this module adapted to your company?</h2>
-    <h3 class="oe_slogan">I adapt it to the way you work, or build the small Odoo feature you are missing.</h3>
-    <p>Odoo 17 and 18, Community or Enterprise. Fixed price announced before I start, paid on delivery.</p>
-    <p style="margin:24px 0">
-      <a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Minimum%20Order%20Amount" style="background:#714B67;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold">Describe your need in 2 lines, fixed price within 24 h</a>
-    </p>
-    <p>alexandre@alexandregabriel.ch &middot; <a href="https://alexandregabriel.ch/?v=odoo">alexandregabriel.ch</a></p>
-    <p><i>En fran&ccedil;ais : d&eacute;crivez votre besoin en deux lignes, je vous r&eacute;ponds avec un prix fixe sous 24 h.</i></p>
-  </div>
-</section>
+<div style="font-family:Inter,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2B323B; text-align:left; max-width:880px; margin:0 auto; padding:8px 0 40px 0">
+<p style="margin:0 0 12px 0; font-size:14px; line-height:20px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#714B67">Free module for Odoo 18 &#183; Sales</p>
+<h2 style="margin:0 0 14px 0; font-size:30px; line-height:38px; font-weight:600; color:#14181D; max-width:800px">Odoo refuses to confirm a sales order below the minimum amount you set, and shows both amounts.</h2>
+<p style="margin:0 0 14px 0; font-size:18px; line-height:28px; color:#2B323B; max-width:720px">For companies that do not accept small orders.</p>
+<p style="margin:0 0 24px 0; font-size:14px; line-height:22px; color:#55606E; max-width:720px">Tested on Odoo 18 Community &#183; 6 automated tests &#183; English and French &#183; LGPL-3<br/>By Alexandre Gabriel, independent Odoo developer. Need it adapted to your company? <a href="#ag-custom" style="color:#714B67; font-weight:600; text-decoration:underline">See below</a>.</p>
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:763px">
+<img src="screenshot_blocked.png" alt="Odoo dialog Invalid Operation, with the message quoted in the caption and a Close button." width="745" height="178" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The message when someone confirms an order that is too small: &#8220;S00209 cannot be confirmed: its untaxed amount is $ 89.00 and the minimum order amount is $ 500.00.&#8221; <span style="white-space:nowrap">Demo data.</span></p>
+<h3 style="margin:12px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">How it works</h3>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">1.</span> Set your minimum.</p>
+<p style="margin:0">One untaxed amount, in the Sales settings.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">2.</span> Someone confirms a small order.</p>
+<p style="margin:0">Odoo blocks the confirmation and shows the amount of the order and the minimum.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">3.</span> Decide.</p>
+<p style="margin:0">Add products to the order, or change the minimum.</p>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Settings</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Where: <b style="font-weight:600; color:#14181D">Sales &#8250; Configuration &#8250; Settings &#8250; Quotations &amp; Orders &#8250; Minimum order amount</b></p>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 16px 0; font-size:15px; line-height:22px; color:#2B323B">
+<thead><tr><th scope="col" style="text-align:left; vertical-align:bottom; width:28%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Setting</th><th scope="col" style="text-align:left; vertical-align:bottom; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">What it does</th><th scope="col" style="text-align:left; vertical-align:bottom; width:19%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Default</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Minimum order amount</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Untaxed amount below which an order cannot be confirmed. 0 means no minimum.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">0</td></tr>
+</tbody></table>
+<div style="margin:16px 0 0 0">
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:388px">
+<img src="screenshot_settings.png" alt="Odoo Sales settings, block Minimum order amount: orders below this untaxed amount cannot be confirmed (0 = no minimum); the value is 500.00." width="370" height="130" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The setting, in Sales. <span style="white-space:nowrap">Demo data.</span></p>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Good to know</h3>
+<div style="margin:0 0 8px 0; padding:16px 20px 8px 20px; border:1px solid #D9C27A; border-left-width:4px; border-left-color:#8A5A00; border-radius:6px; background-color:#FFF9E8; max-width:720px">
+<ul style="margin:0; padding:0 0 0 18px">
+<li style="margin:0 0 8px 0">One minimum for the whole company. Not one per customer.</li>
+<li style="margin:0 0 8px 0">The untaxed amount is compared. For an order in another currency, the minimum is converted into that currency.</li>
+</ul>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Compatibility</h3>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 8px 0; font-size:15px; line-height:22px; color:#2B323B">
+<tbody>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo 18 Community. Developed and tested with 6 automated tests for this module, 162 for the whole suite of 18 modules.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Not tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo Enterprise.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Odoo 17</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">A 17.0 version exists on its own branch.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Needs</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">The Odoo app Sales.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Languages</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">English and French. No German translation.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Licence</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">LGPL-3. Free.</td></tr>
+</tbody></table>
+<div id="ag-custom" style="margin:44px 0 0 0; padding:22px 24px 20px 24px; border:1px solid #D0D5DD; border-top-width:4px; border-top-color:#714B67; border-radius:6px; background-color:#F5F6F8; max-width:720px">
+<h3 style="margin:0 0 8px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Want this module adapted to your company?</h3>
+<p style="margin:0 0 6px 0; max-width:720px">I adapt it to the way you work, or build the small Odoo feature you are missing.</p>
+<p style="margin:0 0 16px 0; max-width:720px">Fixed price announced before I start, paid on delivery.</p>
+<p style="margin:0 0 16px 0"><a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Minimum%20Order%20Amount" style="display:inline-block; padding:10px 18px; border:2px solid #714B67; border-radius:6px; background-color:#FFFFFF; color:#714B67; font-weight:600; text-decoration:underline">Describe your need in 2 lines, fixed price within 24&#160;h</a></p>
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D">Alexandre Gabriel, independent Odoo developer in Lausanne</p>
+<p style="margin:0 0 10px 0">alexandre@alexandregabriel.ch &#183; <a href="https://alexandregabriel.ch/?v=odoo" style="color:#714B67; font-weight:600; text-decoration:underline">alexandregabriel.ch</a></p>
+<p lang="fr" style="margin:0; font-size:15px; line-height:22px; font-style:italic; color:#55606E">En fran&#231;ais : d&#233;crivez votre besoin en deux lignes, je vous r&#233;ponds avec un prix fixe sous 24&#160;h.</p>
+</div>
+</div>
