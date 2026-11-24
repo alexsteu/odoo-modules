@@ -1,5 +1,6 @@
 from odoo import Command, fields
-from odoo.tests import tagged
+from odoo.exceptions import AccessError
+from odoo.tests import new_test_user, tagged
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
 
@@ -122,6 +123,39 @@ class TestProjectProfitability(AccountTestInvoicingCommon):
         projects.mapped("ag_margin")
         used = self.env.cr.sql_log_count - start
         self.assertLess(used, 12, "the list view must not run several queries per project (%s used)" % used)
+
+    def test_figures_are_reserved_to_project_managers(self):
+        """Costs and margins are computed with elevated rights: a project user must not read them."""
+        self._timesheet(2.0)
+        user = new_test_user(self.env, login="ag_project_user", groups="project.group_project_user")
+        manager = new_test_user(self.env, login="ag_project_manager", groups="project.group_project_manager")
+        figures = ["ag_hours_spent", "ag_timesheet_cost", "ag_other_costs", "ag_revenue", "ag_margin",
+                   "ag_margin_percent"]
+
+        as_user = self.project.with_user(user)
+        self.assertTrue(as_user.read(["name"]), "the project itself stays readable")
+        known = as_user.fields_get()
+        for name in figures:
+            self.assertNotIn(name, known)
+            with self.assertRaises(AccessError):
+                as_user.read([name])
+        with self.assertRaises(AccessError):
+            self.env["project.project"].with_user(user).search_read([("id", "=", self.project.id)], ["ag_margin"])
+
+        data = self.project.with_user(manager).read(figures)[0]
+        self.assertAlmostEqual(data["ag_hours_spent"], 2.0)
+        self.assertAlmostEqual(data["ag_timesheet_cost"], 100.0)
+
+        # the project user still opens the form and the list of projects, without the figures
+        kinds = dict(self.env["ir.ui.view"]._fields["type"].selection)
+        listing = "list" if "list" in kinds else "tree"
+        wanted = [(self.env.ref("project.edit_project").id, "form"),
+                  (self.env.ref("project.view_project").id, listing)]
+        for_user = self.env["project.project"].with_user(user).get_views(wanted)["views"]
+        for_manager = self.env["project.project"].with_user(manager).get_views(wanted)["views"]
+        for kind in ("form", listing):
+            self.assertNotIn("ag_margin", for_user[kind]["arch"])
+            self.assertIn("ag_margin", for_manager[kind]["arch"])
 
     def test_views_show_the_figures(self):
         form = self.env.ref("project.edit_project").get_combined_arch()

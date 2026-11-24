@@ -130,13 +130,15 @@ msgstr "Devis envoyé le"
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_res_company__quote_followup_start_date
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
 msgid ""
-"Quotations sent before this date are never followed up automatically. It is "
-"set to the day the module is installed, so that old quotations are not "
-"chased by surprise."
+"Quotations sent before this date are never followed up automatically. On a "
+"new installation it is set to the day the module is installed, so that old "
+"quotations are not chased by surprise. Leave it empty to follow up every "
+"sent quotation."
 msgstr ""
 "Les devis envoyés avant cette date ne sont jamais relancés automatiquement. "
-"La date est fixée au jour d'installation du module, pour que les anciens "
-"devis ne soient pas relancés par surprise."
+"À une nouvelle installation, la date est fixée au jour d'installation du "
+"module, pour que les anciens devis ne soient pas relancés par surprise. "
+"Laissez la date vide pour relancer tous les devis envoyés."
 
 #. module: ag_sale_quote_followup
 #: model:ir.actions.server,name:ag_sale_quote_followup.ir_cron_quote_followup_ir_actions_server

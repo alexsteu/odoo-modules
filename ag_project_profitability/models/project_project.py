@@ -2,16 +2,26 @@ from collections import defaultdict
 
 from odoo import fields, models
 
+MANAGERS = "project.group_project_manager"
+
 
 class ProjectProject(models.Model):
     _inherit = "project.project"
 
-    ag_hours_spent = fields.Float(string="Hours spent", compute="_compute_ag_profitability", digits=(16, 2))
-    ag_timesheet_cost = fields.Monetary(string="Timesheet cost", compute="_compute_ag_profitability")
-    ag_other_costs = fields.Monetary(string="Other costs", compute="_compute_ag_profitability")
-    ag_revenue = fields.Monetary(string="Revenue", compute="_compute_ag_profitability")
-    ag_margin = fields.Monetary(string="Margin", compute="_compute_ag_profitability")
-    ag_margin_percent = fields.Float(string="Margin %", compute="_compute_ag_profitability", digits=(16, 1))
+    # The figures are computed with elevated rights (analytic lines, hourly costs): the fields
+    # themselves are reserved to project managers, whatever the way they are read.
+    ag_hours_spent = fields.Float(
+        string="Hours spent", compute="_compute_ag_profitability", digits=(16, 2), groups=MANAGERS)
+    ag_timesheet_cost = fields.Monetary(
+        string="Timesheet cost", compute="_compute_ag_profitability", groups=MANAGERS)
+    ag_other_costs = fields.Monetary(
+        string="Other costs", compute="_compute_ag_profitability", groups=MANAGERS)
+    ag_revenue = fields.Monetary(
+        string="Revenue", compute="_compute_ag_profitability", groups=MANAGERS)
+    ag_margin = fields.Monetary(
+        string="Margin", compute="_compute_ag_profitability", groups=MANAGERS)
+    ag_margin_percent = fields.Float(
+        string="Margin %", compute="_compute_ag_profitability", digits=(16, 1), groups=MANAGERS)
 
     def _ag_analytic_account(self):
         self.ensure_one()

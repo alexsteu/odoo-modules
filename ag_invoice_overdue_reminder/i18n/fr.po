@@ -92,13 +92,16 @@ msgstr "Premier rappel après (jours)"
 #: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_start_date
 #: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_start_date
 msgid ""
-"Invoices due before this date are never reminded automatically. It is set to"
-" the day the module is installed, so that old unpaid invoices are not chased"
-" by surprise."
+"Invoices due before this date are never reminded automatically. On a new "
+"installation it is set to the day the module is installed, so that old "
+"unpaid invoices are not chased by surprise. Leave it empty to remind every "
+"unpaid invoice."
 msgstr ""
 "Les factures échues avant cette date ne sont jamais relancées "
-"automatiquement. La date est fixée au jour d'installation du module, pour "
-"que les anciennes factures impayées ne soient pas relancées par surprise."
+"automatiquement. À une nouvelle installation, la date est fixée au jour "
+"d'installation du module, pour que les anciennes factures impayées ne soient"
+" pas relancées par surprise. Laissez la date vide pour relancer toutes les "
+"factures impayées."
 
 #. module: ag_invoice_overdue_reminder
 #: model:mail.template,name:ag_invoice_overdue_reminder.mail_template_overdue_reminder

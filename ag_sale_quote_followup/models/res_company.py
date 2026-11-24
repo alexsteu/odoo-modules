@@ -10,6 +10,7 @@ class ResCompany(models.Model):
     quote_followup_start_date = fields.Date(
         string="Follow up quotations sent since",
         default=fields.Date.context_today,
-        help="Quotations sent before this date are never followed up automatically. "
-             "It is set to the day the module is installed, so that old quotations are not chased by surprise.",
+        help="Quotations sent before this date are never followed up automatically. On a new installation "
+             "it is set to the day the module is installed, so that old quotations are not chased by "
+             "surprise. Leave it empty to follow up every sent quotation.",
     )
