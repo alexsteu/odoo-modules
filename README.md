@@ -23,11 +23,18 @@ By Alexandre Gabriel, independent Odoo developer. Tested on Odoo 17 (Community).
 
 ## Tests
 
-Every module comes with automated tests. To run the tests of one module on a test database:
+Every module comes with automated tests (163 in total on this branch). To run the tests of one module on a test database:
 
     odoo-bin -d <test database> -i <module> --test-tags /<module> --stop-after-init
 
 The two AI modules are tested with simulated answers of the AI providers: the tests never call a paid service.
+
+## Upgrading from version 17.0.1.0.0
+
+Upgrade the modules as usual (Apps > the module > Upgrade). Two things are deliberately left as they are:
+
+- The text of the two customer e-mails (quotation follow-up, overdue invoice reminder) is kept, in case you adapted it. To get the new wording: Settings > Technical > Email > Email Templates, open the template, then click Reset Template.
+- The automatic reminders get a start date, set to the day of the upgrade: quotations sent and invoices due before that day are not chased by surprise. Change the date in the settings of Sales and Invoicing to include older ones.
 
 ## Languages
 
