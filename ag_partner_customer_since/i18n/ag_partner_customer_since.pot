@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_partner_customer_since
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_partner_customer_since
+#: model:ir.model,name:ag_partner_customer_since.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: ag_partner_customer_since
+#: model:ir.model.fields,field_description:ag_partner_customer_since.field_res_partner__customer_since
+#: model:ir.model.fields,field_description:ag_partner_customer_since.field_res_users__customer_since
+msgid "Customer since"
+msgstr ""

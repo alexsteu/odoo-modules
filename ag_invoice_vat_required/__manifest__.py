@@ -1,7 +1,7 @@
 {
     "name": "VAT Number Required on Company Invoices",
     "summary": "Block posting a customer invoice to a company that has no VAT number",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.1.0",
     "category": "Accounting/Accounting",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

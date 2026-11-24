@@ -1,0 +1,109 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_product_brand
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__active
+msgid "Active"
+msgstr "Actif"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_product__product_brand_id
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_template__product_brand_id
+#: model:ir.model.fields,field_description:ag_product_brand.field_sale_report__product_brand_id
+#: model_terms:ir.ui.view,arch_db:ag_product_brand.product_template_search_view_brand
+#: model_terms:ir.ui.view,arch_db:ag_product_brand.sale_report_search_brand
+msgid "Brand"
+msgstr "Marque"
+
+#. module: ag_product_brand
+#: model_terms:ir.ui.view,arch_db:ag_product_brand.product_brand_view_form
+msgid "Brand name"
+msgstr "Nom de la marque"
+
+#. module: ag_product_brand
+#: model:ir.actions.act_window,name:ag_product_brand.product_brand_action
+#: model:ir.ui.menu,name:ag_product_brand.menu_product_brand
+msgid "Brands"
+msgstr "Marques"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__description
+#: model_terms:ir.ui.view,arch_db:ag_product_brand.product_brand_view_form
+msgid "Description"
+msgstr "Description"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__logo
+msgid "Logo"
+msgstr "Logo"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: ag_product_brand
+#: model:ir.model,name:ag_product_brand.model_product_brand
+msgid "Product Brand"
+msgstr "Marque de produit"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__product_count
+msgid "Product Count"
+msgstr "Nombre de produits"
+
+#. module: ag_product_brand
+#: model:ir.model.fields,field_description:ag_product_brand.field_product_brand__product_ids
+#: model_terms:ir.ui.view,arch_db:ag_product_brand.product_brand_view_form
+msgid "Products"
+msgstr "Produits"
+
+#. module: ag_product_brand
+#: model:ir.model.constraint,message:ag_product_brand.constraint_product_brand_name_uniq
+msgid "This brand already exists."
+msgstr "Cette marque existe déjà."

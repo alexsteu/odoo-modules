@@ -1,0 +1,269 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_ai_quote_from_email
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_res_config_settings__ag_ai_api_key
+msgid "AI API key"
+msgstr "Clé API de l'IA"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_res_config_settings__ag_ai_model
+msgid "AI model"
+msgstr "Modèle d'IA"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_res_config_settings__ag_ai_provider
+msgid "AI provider"
+msgstr "Fournisseur d'IA"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.res_config_settings_view_form_ag_ai_quote
+msgid "AI quotation"
+msgstr "Devis par IA"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model,name:ag_ai_quote_from_email.model_ag_ai_quote_wizard
+msgid "AI quotation from e-mail"
+msgstr "Devis par IA à partir d'un e-mail"
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid ""
+"Add your AI API key in Sales > Configuration > Settings > AI quotation."
+msgstr ""
+"Ajoutez votre clé API dans Ventes > Configuration > Paramètres > Devis par "
+"IA."
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.ag_ai_quote_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields.selection,name:ag_ai_quote_from_email.selection__res_config_settings__ag_ai_provider__openai
+msgid "ChatGPT (OpenAI)"
+msgstr "ChatGPT (OpenAI)"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields.selection,name:ag_ai_quote_from_email.selection__res_config_settings__ag_ai_provider__anthropic
+msgid "Claude (Anthropic)"
+msgstr "Claude (Anthropic)"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__email_text
+msgid "Customer e-mail"
+msgstr "E-mail du client"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__display_name
+msgid "Display Name"
+msgstr "Nom d'affichage"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.res_config_settings_view_form_ag_ai_quote
+msgid ""
+"Fill quotations from customer e-mails with Claude or ChatGPT (your own API "
+"key)"
+msgstr ""
+"Remplissez vos devis à partir des e-mails de vos clients avec Claude ou "
+"ChatGPT (votre propre clé API)"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.ag_ai_quote_wizard_form
+msgid "Fill the quotation"
+msgstr "Remplir le devis"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.view_order_form_ag_ai_quote
+msgid "Fill with AI"
+msgstr "Remplir avec l'IA"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.ag_ai_quote_wizard_form
+msgid "Hello, we would need 20 chairs and 4 tables for our new office..."
+msgstr ""
+"Bonjour, il nous faudrait 20 chaises et 4 tables pour nos nouveaux "
+"bureaux..."
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Mis à jour par"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__write_date
+msgid "Last Updated on"
+msgstr "Mis à jour le"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,help:ag_ai_quote_from_email.field_res_config_settings__ag_ai_model
+msgid ""
+"Leave empty for the default: claude-haiku-5-5 (Claude) or gpt-4o-mini "
+"(ChatGPT)."
+msgstr ""
+"Laissez vide pour le modèle par défaut : claude-haiku-5-5 (Claude) ou "
+"gpt-4o-mini (ChatGPT)."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "Not found in your products, to check: %s"
+msgstr "Introuvable dans vos produits, à vérifier : %s"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.ag_ai_quote_wizard_form
+msgid ""
+"Paste the customer's e-mail. The AI finds the customer and your products, "
+"then fills the quotation. Always check it before sending."
+msgstr ""
+"Collez l'e-mail du client. L'IA retrouve le client et vos produits, puis "
+"remplit le devis. Vérifiez-le toujours avant de l'envoyer."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/wizard/ai_quote_wizard.py:0
+msgid "Paste the e-mail of the customer first."
+msgstr "Collez d'abord l'e-mail du client."
+
+#. module: ag_ai_quote_from_email
+#: model:ir.model.fields,field_description:ag_ai_quote_from_email.field_ag_ai_quote_wizard__order_id
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/wizard/ai_quote_wizard.py:0
+msgid ""
+"Quotation filled by AI from a customer e-mail: %(added)s line(s) added, "
+"%(missing)s to check."
+msgstr ""
+"Devis rempli par l'IA à partir d'un e-mail client : %(added)s ligne(s) "
+"ajoutée(s), %(missing)s à vérifier."
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.ag_ai_quote_wizard_form
+msgid "Quotation from e-mail"
+msgstr "Devis à partir d'un e-mail"
+
+#. module: ag_ai_quote_from_email
+#: model:ir.actions.act_window,name:ag_ai_quote_from_email.ag_ai_quote_wizard_action
+#: model:ir.ui.menu,name:ag_ai_quote_from_email.menu_ag_ai_quote
+msgid "Quotation from e-mail (AI)"
+msgstr "Devis à partir d'un e-mail (IA)"
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "The AI answer could not be read. Please try again."
+msgstr "La réponse de l'IA est illisible. Veuillez réessayer."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "The AI answer is too long and was cut. Try with a shorter e-mail."
+msgstr ""
+"La réponse de l'IA est trop longue et a été coupée. Essayez avec un e-mail "
+"plus court."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/wizard/ai_quote_wizard.py:0
+msgid ""
+"The AI could not find who the customer is. Open a quotation for that "
+"customer and use the AI button there."
+msgstr ""
+"L'IA n'a pas trouvé de quel client il s'agit. Ouvrez un devis pour ce client"
+" et utilisez-y le bouton « Remplir avec l'IA »."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid ""
+"The AI declined to process this e-mail. Please fill the quotation by hand."
+msgstr ""
+"L'IA a refusé de traiter cet e-mail. Veuillez remplir le devis à la main."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid ""
+"The AI provider is limiting your account (too many requests or no credit "
+"left). Try again in a minute or check your account with the provider."
+msgstr ""
+"Le fournisseur d'IA limite votre compte (trop de demandes ou crédit épuisé)."
+" Réessayez dans une minute ou vérifiez votre compte chez le fournisseur."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid ""
+"The AI provider refused your API key. Check it in Sales > Configuration > "
+"Settings > AI quotation."
+msgstr ""
+"Le fournisseur d'IA a refusé votre clé API. Vérifiez-la dans Ventes > "
+"Configuration > Paramètres > Devis par IA."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "The AI service did not answer in time. Please try again."
+msgstr "Le service d'IA n'a pas répondu à temps. Veuillez réessayer."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "The AI service did not answer: %s"
+msgstr "Le service d'IA n'a pas répondu : %s"
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid ""
+"The AI service is temporarily overloaded. Please try again in a minute."
+msgstr ""
+"Le service d'IA est momentanément surchargé. Veuillez réessayer dans une "
+"minute."
+
+#. module: ag_ai_quote_from_email
+#. odoo-python
+#: code:addons/ag_ai_quote_from_email/models/sale_order.py:0
+msgid "connection error"
+msgstr "erreur de connexion"
+
+#. module: ag_ai_quote_from_email
+#: model_terms:ir.ui.view,arch_db:ag_ai_quote_from_email.res_config_settings_view_form_ag_ai_quote
+msgid "default"
+msgstr "par défaut"

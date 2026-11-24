@@ -1,7 +1,7 @@
 {
     "name": "Sale Order Line Numbers",
     "summary": "Show a line number on each sales order and quotation line",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_invoice_overdue_reminder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_invoice_overdue_reminder
+#: model:mail.template,body_html:ag_invoice_overdue_reminder.mail_template_overdue_reminder
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p>Hello<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"></t></t>,</p>\n"
+"    <p>Unless we missed your payment, invoice <strong t-out=\"object.name or ''\"></strong>\n"
+"        was due on <t t-out=\"format_date(object.invoice_date_due) or ''\"></t>.\n"
+"        The amount still open is <strong t-out=\"format_amount(object.amount_residual, object.currency_id) or ''\"></strong>.</p>\n"
+"    <p>You can view and pay it online here:</p>\n"
+"    <p><a t-att-href=\"object.get_portal_url()\" style=\"background-color:#875A7B;padding:8px 16px;color:#fff;border-radius:5px;text-decoration:none;\">View the invoice</a></p>\n"
+"    <p>If you already paid, please ignore this message. Thank you!</p>\n"
+"    <p>Best regards,<br><t t-out=\"object.company_id.name or ''\"></t></p>\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model,name:ag_invoice_overdue_reminder.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model,name:ag_invoice_overdue_reminder.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_next
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_next
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_next
+msgid ""
+"Day the next reminder will be e-mailed if the invoice is still unpaid. Empty"
+" when none is planned: invoice paid, reminders stopped, maximum reached or "
+"customer without e-mail."
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_days
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_days
+msgid "Days between reminders"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_first_days
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_first_days
+msgid ""
+"Days of grace after the due date before the first reminder: a transfer made "
+"on the due date takes a few days to reach your bank statement."
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "E-mail customers automatically when an invoice is overdue"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "First reminder"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_first_days
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_first_days
+msgid "First reminder after (days)"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_start_date
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_start_date
+msgid ""
+"Invoices due before this date are never reminded automatically. It is set to"
+" the day the module is installed, so that old unpaid invoices are not chased"
+" by surprise."
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:mail.template,name:ag_invoice_overdue_reminder.mail_template_overdue_reminder
+msgid "Invoicing: overdue invoice reminder"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.actions.server,name:ag_invoice_overdue_reminder.ir_cron_overdue_reminder_ir_actions_server
+msgid "Invoicing: overdue invoice reminders"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model,name:ag_invoice_overdue_reminder.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_last
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_last
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_last
+msgid "Last reminder"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_max
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_max
+msgid "Maximum reminders"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_next
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_next
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_next
+msgid "Next automatic reminder"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_stop
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_stop
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_stop
+msgid "No automatic reminder"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "Only invoices due since"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_enabled
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_enabled
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "Overdue invoice reminders"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_company__overdue_reminder_start_date
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_res_config_settings__overdue_reminder_start_date
+msgid "Remind invoices due since"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_count
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_count
+#: model:ir.model.fields,field_description:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_count
+msgid "Reminders sent"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_bank_statement_line__overdue_reminder_stop
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_move__overdue_reminder_stop
+#: model:ir.model.fields,help:ag_invoice_overdue_reminder.field_account_payment__overdue_reminder_stop
+msgid "Tick to never send automatic overdue reminders for this invoice."
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "at most"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "days after the due date,"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "days,"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "then every"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model_terms:ir.ui.view,arch_db:ag_invoice_overdue_reminder.res_config_settings_view_form_overdue_reminder
+msgid "times"
+msgstr ""
+
+#. module: ag_invoice_overdue_reminder
+#: model:mail.template,subject:ag_invoice_overdue_reminder.mail_template_overdue_reminder
+msgid "{{ object.company_id.name }} - reminder for invoice {{ object.name }}"
+msgstr ""

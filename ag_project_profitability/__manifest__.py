@@ -1,7 +1,7 @@
 {
     "name": "Project Profitability (hours, costs, margin)",
     "summary": "See hours spent, timesheet cost, revenue and margin of each project, also in Odoo Community",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Services/Project",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",
