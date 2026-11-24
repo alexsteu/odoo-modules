@@ -10,6 +10,9 @@ class TestCustomerSince(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         cls.company = cls.env["res.partner"].create({"name": "Menuiserie Favre", "is_company": True})
         cls.contact = cls.env["res.partner"].create({"name": "Luc Favre", "parent_id": cls.company.id})
         cls.product = cls.env["product.product"].create({"name": "Service", "list_price": 100})

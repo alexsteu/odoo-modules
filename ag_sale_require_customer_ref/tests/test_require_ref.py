@@ -9,6 +9,9 @@ class TestRequireCustomerRef(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         cls.company = cls.env["res.partner"].create({
             "name": "Ville de Morges", "is_company": True, "require_po_number": True,
         })

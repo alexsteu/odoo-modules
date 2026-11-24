@@ -10,6 +10,9 @@ class TestExpiredBanner(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         cls.partner = cls.env["res.partner"].create({"name": "Customer"})
 
     def _quotation(self, validity_days):
