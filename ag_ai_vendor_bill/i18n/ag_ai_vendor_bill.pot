@@ -1,0 +1,246 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_ai_vendor_bill
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20261112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 19:35+0000\n"
+"PO-Revision-Date: 2026-11-24 19:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "%s bill(s) filled."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "%s bill(s) not started: select them and run the action again."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid "AI API key"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid "AI bill reader"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid "AI model"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid "AI provider"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"Add your AI API key in Invoicing (or Accounting) > Configuration > Settings "
+"> AI bill reader."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "Bill filled by AI from %s. Please check it before posting."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,field_description:ag_ai_vendor_bill.field_res_config_settings__ag_ai_bill_api_key
+msgid "Bill reader: AI API key"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,field_description:ag_ai_vendor_bill.field_res_config_settings__ag_ai_bill_model
+msgid "Bill reader: AI model"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,field_description:ag_ai_vendor_bill.field_res_config_settings__ag_ai_bill_provider
+msgid "Bill reader: AI provider"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields.selection,name:ag_ai_vendor_bill.selection__res_config_settings__ag_ai_bill_provider__openai
+msgid "ChatGPT (OpenAI)"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields.selection,name:ag_ai_vendor_bill.selection__res_config_settings__ag_ai_bill_provider__anthropic
+msgid "Claude (Anthropic)"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model,name:ag_ai_vendor_bill.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model,name:ag_ai_vendor_bill.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,help:ag_ai_vendor_bill.field_res_config_settings__ag_ai_bill_api_key
+msgid ""
+"Key of your own account with the AI provider. Leave empty to use the key "
+"entered for AI quotations, when that module is installed."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,help:ag_ai_vendor_bill.field_res_config_settings__ag_ai_bill_model
+msgid ""
+"Leave empty for the default: claude-sonnet-5-5 (Claude) or gpt-4o (ChatGPT)."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "No line could be read on the document."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.model.fields,field_description:ag_ai_vendor_bill.field_account_bank_statement_line__ag_ai_read
+#: model:ir.model.fields,field_description:ag_ai_vendor_bill.field_account_move__ag_ai_read
+msgid "Read by AI"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.view_account_invoice_filter_ag_ai_bill
+msgid "Read by AI, to check"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid ""
+"Read supplier invoices (PDF, photo) with Claude or ChatGPT, using your own "
+"API key"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model:ir.actions.server,name:ag_ai_vendor_bill.action_ag_ai_read_bills
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.view_move_form_ag_ai_bill
+msgid "Read with AI"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "Select draft vendor bills."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"Tax ID read on the document: %s. Odoo did not accept it, so it was left "
+"empty on the new vendor."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "The AI answer could not be read. Please try again."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"The AI answer is too long and was cut. This document has too many lines for "
+"one reading."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "The AI declined to read this document. Please fill the bill by hand."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"The AI provider is limiting your account (too many requests or no credit "
+"left). Try again in a minute or check your account with the provider."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"The AI provider refused your API key. Check it in Invoicing (or Accounting) "
+"> Configuration > Settings > AI bill reader."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "The AI service did not answer in time. Please try again."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "The AI service did not answer: %s"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"The AI service is temporarily overloaded. Please try again in a minute."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"The document is in %(currency)s, a currency that is not active in Odoo: the "
+"bill stays in %(kept)s."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"Warning: total on the document %(doc)s, total in Odoo %(odoo)s (check the "
+"taxes)."
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid "connection error"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#: model_terms:ir.ui.view,arch_db:ag_ai_vendor_bill.res_config_settings_view_form_ag_ai_bill
+msgid "default"
+msgstr ""
+
+#. module: ag_ai_vendor_bill
+#. odoo-python
+#: code:addons/ag_ai_vendor_bill/models/account_move.py:0
+msgid ""
+"no PDF or image attached. Attach the supplier invoice to the bill, then try "
+"again."
+msgstr ""

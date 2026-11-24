@@ -21,6 +21,18 @@ By Alexandre Gabriel, independent Odoo developer. Tested on Odoo 18 (Community).
 - `ag_sale_require_customer_ref`: Block the confirmation of a sales order without customer reference for customers who require a PO number.
 - `crm_stale_opportunity_reminder`: Create a follow-up activity on CRM opportunities nobody touched for a while.
 
+## Tests
+
+Every module comes with automated tests (159 in total on this branch). To run the tests of one module on a test database:
+
+    odoo-bin -d <test database> -i <module> --test-tags /<module> --stop-after-init
+
+The two AI modules are tested with simulated answers of the AI providers: the tests never call a paid service.
+
+## Languages
+
+English and French (`i18n/fr.po` in each module). The e-mails sent to your customers (quotation follow-up, overdue invoice reminder) are in French for customers whose language is French, in English otherwise.
+
 ## Need one adapted to your company?
 
 I adapt these modules to the way you work, or build the small Odoo feature you are missing. Fixed price announced before I start, paid on delivery.

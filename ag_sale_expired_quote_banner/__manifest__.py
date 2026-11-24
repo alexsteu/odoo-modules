@@ -1,7 +1,7 @@
 {
     "name": "Expired Quotation Warning",
     "summary": "Show a clear warning on quotations whose validity date has passed",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

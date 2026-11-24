@@ -10,7 +10,7 @@ class SaleOrder(models.Model):
             partner = order.partner_id.commercial_partner_id
             if (partner.require_po_number or order.partner_id.require_po_number) and not (order.client_order_ref or "").strip():
                 raise UserError(_(
-                    "%s requires a PO number. Please fill in the Customer Reference of %s before confirming.",
-                    partner.display_name, order.name,
+                    "%(customer)s requires a PO number. Please fill in the Customer Reference of %(order)s before confirming.",
+                    customer=partner.display_name, order=order.name,
                 ))
         return super().action_confirm()

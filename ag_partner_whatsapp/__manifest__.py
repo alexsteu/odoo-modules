@@ -1,7 +1,7 @@
 {
     "name": "WhatsApp Button on Contacts",
     "summary": "Open a WhatsApp chat with a contact in one click from its phone number",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.1.0",
     "category": "Sales/CRM",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

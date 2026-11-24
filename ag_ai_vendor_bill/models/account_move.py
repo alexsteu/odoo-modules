@@ -108,7 +108,7 @@ class AccountMove(models.Model):
             _logger.warning("AI bill reading failed (HTTP %s): %s", status, detail or error)
             if status in (401, 403):
                 raise _stop_error(_(
-                    "The AI provider refused your API key. Check it in Accounting > Configuration > Settings > AI bill reader."
+                    "The AI provider refused your API key. Check it in Invoicing (or Accounting) > Configuration > Settings > AI bill reader."
                 )) from error
             if status == 429:
                 raise UserError(_(
@@ -127,7 +127,7 @@ class AccountMove(models.Model):
         provider = icp.get_param("ag_ai_bill.provider") or icp.get_param("ag_ai_quote.provider") or "anthropic"
         key = icp.get_param("ag_ai_bill.api_key") or icp.get_param("ag_ai_quote.api_key")
         if not key:
-            raise _stop_error(_("Add your AI API key in Accounting > Configuration > Settings > AI bill reader."))
+            raise _stop_error(_("Add your AI API key in Invoicing (or Accounting) > Configuration > Settings > AI bill reader."))
         model = icp.get_param("ag_ai_bill.model") or DEFAULT_MODELS[provider]
         data = attachment.datas.decode() if isinstance(attachment.datas, bytes) else attachment.datas
         mime = attachment.mimetype
