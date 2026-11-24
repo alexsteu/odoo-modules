@@ -81,6 +81,17 @@ class TestAiVendorBill(AccountTestInvoicingCommon):
         data.update(overrides)
         return data
 
+    def _note(self, bill):
+        """Body of the note the reader leaves in the chatter of the bill.
+
+        The note is not always the last message of the bill: when the tracking of fields is on
+        (as in the test class of Odoo 17), the message that tracks the fields changed by the
+        reader is written after the note.
+        """
+        notes = bill.message_ids.filtered(lambda message: "filled by AI" in str(message.body))
+        self.assertEqual(len(notes), 1, "one note for one reading")
+        return str(notes.body)
+
     # ------------------------------------------------------------------ main path
     def test_pdf_fills_the_draft_bill(self):
         bill = self._bill()
@@ -127,9 +138,9 @@ class TestAiVendorBill(AccountTestInvoicingCommon):
         bill = self._bill()
         with patch(POST, return_value=anthropic_answer(self._answer(total=75.6))):
             bill.action_ag_ai_read_bill()
-        last = bill.message_ids.sorted("id")[-1].body
-        self.assertIn("75.6", str(last))
-        self.assertIn("72", str(last))
+        note = self._note(bill)
+        self.assertIn("75.6", note)
+        self.assertIn("72", note)
 
     def test_unknown_vendor_is_created(self):
         answer = self._answer(vendor={"name": "Imprimerie Nouvelle Sàrl", "vat": None, "email": "info@imprimerie.example",
@@ -231,14 +242,14 @@ class TestAiVendorBill(AccountTestInvoicingCommon):
             bill.action_ag_ai_read_bill()
         self.assertFalse(currency.active, "a currency is never switched on behind the back of the accountant")
         self.assertEqual(bill.currency_id, self.env.company.currency_id)
-        self.assertIn(currency.name, str(bill.message_ids.sorted("id")[-1].body))
+        self.assertIn(currency.name, self._note(bill))
 
     def test_empty_document_is_reported(self):
         bill = self._bill()
         with patch(POST, return_value=anthropic_answer(self._answer(lines=[], total=None))):
             bill.action_ag_ai_read_bill()
         self.assertFalse(bill.invoice_line_ids)
-        self.assertIn("No line", str(bill.message_ids.sorted("id")[-1].body))
+        self.assertIn("No line", self._note(bill))
 
     # ------------------------------------------------------------------ several bills, errors
     def test_several_bills_one_failure_does_not_lose_the_others(self):

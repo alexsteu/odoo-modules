@@ -33,12 +33,12 @@ The two AI modules are tested with simulated answers of the AI providers: the te
 
 Upgrade the modules as usual (Apps > the module > Upgrade). Two things are deliberately left as they are:
 
-- The text of the two customer e-mails (quotation follow-up, overdue invoice reminder) is kept, in case you adapted it. To get the new wording: Settings > Technical > Email Templates, open the template, then Action > Reset Template.
+- The text of the two customer e-mails (quotation follow-up, overdue invoice reminder) is kept, in case you adapted it. To get the new wording: Settings > Technical > Email > Email Templates, open the template, then click Reset Template.
 - The automatic reminders get a start date, set to the day of the upgrade: quotations sent and invoices due before that day are not chased by surprise. Change the date in the settings of Sales and Invoicing to include older ones.
 
 ## Languages
 
-English and French (`i18n/fr.po` in each module). The e-mails sent to your customers (quotation follow-up, overdue invoice reminder) are in French for customers whose language is French, in English otherwise.
+English and French (`i18n/fr.po` in each module that has text to translate). The e-mails sent to your customers (quotation follow-up, overdue invoice reminder) are in French for customers whose language is French, in English otherwise.
 
 ## Need one adapted to your company?
 
