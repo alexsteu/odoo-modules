@@ -8,7 +8,10 @@
     "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["sale"],
-    "data": ["views/sale_order_views.xml"],
+    "data": [
+        "views/sale_order_views.xml",
+        "report/sale_report_templates.xml",
+    ],
     "images": ["static/description/banner.png"],
     "price": 0,
     "currency": "EUR",
