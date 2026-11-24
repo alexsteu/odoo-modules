@@ -6,9 +6,13 @@ def migrate(cr, version):
     and wrong for an upgrade, where it would silently stop the reminders in progress.
     An empty date means "no limit", which is what 1.0.x did.
 
+    Only the companies where the reminders were switched on are concerned. Where they were off,
+    nothing was in progress: the date stays at the day of the upgrade, so that switching the
+    reminders on later does not chase every old unpaid invoice.
+
     The folder is named 1.1.0, without the Odoo series, so that the script does not run
     again when a database installed in 17.0.1.1.0 moves to 18.0.1.1.0.
     """
     if not version:
         return
-    cr.execute("UPDATE res_company SET overdue_reminder_start_date = NULL")
+    cr.execute("UPDATE res_company SET overdue_reminder_start_date = NULL WHERE overdue_reminder_enabled")

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Revenue and other costs are read on the analytic account of the project. Users link an
+        invoice or a bill to it in the column "Analytic Distribution", which Odoo hides until its
+        option "Analytic Accounting" is on. Odoo shows that option in the Invoicing settings to
+        users with full accounting rights only: on Odoo Community nobody has them by default.
+        The same box is offered here, where a project manager looks for it.
+    -->
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ag.project.profitability</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="project.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='project']//block[@name='analytic']" position="inside">
+                <setting id="ag_analytic_accounting_setting"
+                         help="Shows the column Analytic Distribution on invoice and bill lines. Pick the project there: the Profitability tab reads revenue and other costs from it.">
+                    <field name="group_analytic_accounting"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

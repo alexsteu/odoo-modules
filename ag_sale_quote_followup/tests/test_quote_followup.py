@@ -138,11 +138,48 @@ class TestQuoteFollowup(TransactionCase, MockEmail):
         self.assertIn(recent.name, mails[0]["subject"])
         self.assertEqual(old.followup_count, 0)
 
+    def test_message_written_since_does_not_bring_an_old_quotation_back(self):
+        """The start date looks at the day the quotation was sent, not at the last message."""
+        self.env.company.quote_followup_start_date = "2026-03-10"
+        old = self._quotation()                                   # sent on 2 March
+        with freeze_time("2026-03-12 16:00:00"):
+            old.message_post(
+                body="Any news about our quotation?",
+                message_type="comment", subtype_xmlid="mail.mt_comment",
+            )
+        self.assertFalse(old.followup_next_date)
+        self.assertFalse(self._run("2026-03-25 09:00:00"))
+        self.assertEqual(old.followup_count, 0)
+
     def test_empty_start_date_means_no_limit(self):
         self.env.company.quote_followup_start_date = False
         order = self._quotation(sent_on="2025-11-20 09:00:00", validity_date="2026-12-31")
         self.assertEqual(len(self._to_customer(self._run("2026-03-20 09:00:00"))), 1)
         self.assertEqual(order.followup_count, 1)
+
+    def _sent_before_the_installation(self, quotation_date):
+        """A quotation that was already in Quotation Sent when the module was installed."""
+        order = self._quotation(date_order=quotation_date)
+        order.followup_sent_date = False
+        self.env.flush_all()
+        return order
+
+    def test_quotation_sent_before_the_installation_is_protected_by_the_start_date(self):
+        self.env.company.quote_followup_start_date = "2026-03-10"
+        order = self._sent_before_the_installation("2026-03-01 08:00:00")
+        with freeze_time("2026-03-12 16:00:00"):
+            order.message_post(
+                body="Any news about our quotation?",
+                message_type="comment", subtype_xmlid="mail.mt_comment",
+            )
+        self.assertFalse(self._run("2026-03-25 09:00:00"))
+
+    def test_quotation_sent_before_the_installation_counts_from_its_date(self):
+        """The day it was sent is not known: with no start date, the quotation date stands for it."""
+        self.env.company.quote_followup_start_date = False
+        self._sent_before_the_installation("2026-03-01 08:00:00")
+        self.assertFalse(self._run("2026-03-05 09:00:00"), "4 days after the quotation date: too early")
+        self.assertEqual(len(self._to_customer(self._run("2026-03-06 09:00:00"))), 1)
 
     # ------------------------------------------------------------------ upgrade from 1.0.x
     def _upgrade_script(self):
@@ -163,12 +200,23 @@ class TestQuoteFollowup(TransactionCase, MockEmail):
         self.assertEqual(len(self._to_customer(self._run("2026-03-12 09:30:00"))), 1)
         self.assertEqual(order.followup_count, 2)
 
-    def test_upgrade_counts_the_delay_from_the_quotation_date(self):
-        """1.0.x did not record the day a quotation was sent: it counted from the quotation date."""
-        order = self._quotation(date_order="2026-03-01 08:00:00")
-        order.followup_sent_date = False                            # as version 1.0.x left it
+    def test_upgrade_leaves_the_date_where_the_follow_up_was_off(self):
+        """Nothing was in progress there: switching it on later must not chase every old quotation."""
+        self.env.company.quote_followup_enabled = False
+        self.env.company.quote_followup_start_date = "2026-03-10"   # the day of the upgrade
+        old = self._quotation()                                     # sent on 2 March
         self.env.flush_all()
-        self.assertFalse(self._run("2026-03-20 09:00:00"), "no reference date: never followed up")
+        self._upgrade_script().migrate(self.env.cr, "17.0.1.0.1")
+        self.env.invalidate_all()
+        self.assertEqual(self.env.company.quote_followup_start_date, date(2026, 3, 10))
+
+        self.env.company.quote_followup_enabled = True
+        self.assertFalse(self._run("2026-03-20 09:00:00"))
+        self.assertEqual(old.followup_count, 0)
+
+    def test_upgrade_counts_the_delay_from_the_quotation_date(self):
+        """1.0.x did not record the day a quotation was sent: the script writes the quotation date."""
+        order = self._sent_before_the_installation("2026-03-01 08:00:00")   # as version 1.0.x left it
 
         self._upgrade_script().migrate(self.env.cr, "17.0.1.0.1")
         self.env.invalidate_all()

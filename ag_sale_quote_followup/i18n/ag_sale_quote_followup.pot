@@ -149,7 +149,8 @@ msgstr ""
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_sent_date
 msgid ""
 "Set when the quotation becomes Quotation Sent. The follow-up delay starts "
-"here."
+"here. Empty for a quotation that was already sent when the module was "
+"installed: its quotation date is used."
 msgstr ""
 
 #. module: ag_sale_quote_followup

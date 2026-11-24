@@ -17,7 +17,8 @@ class SaleOrder(models.Model):
     followup_last_date = fields.Datetime(string="Last follow-up", copy=False, readonly=True)
     followup_sent_date = fields.Datetime(
         string="Quotation sent on", copy=False, readonly=True,
-        help="Set when the quotation becomes Quotation Sent. The follow-up delay starts here.",
+        help="Set when the quotation becomes Quotation Sent. The follow-up delay starts here. Empty for a "
+             "quotation that was already sent when the module was installed: its quotation date is used.",
     )
     followup_stop = fields.Boolean(
         string="No automatic follow-up",
@@ -83,19 +84,22 @@ class SaleOrder(models.Model):
                 continue
             if order.validity_date and order.validity_date < today:
                 continue
-            dates = [date for date in (order.followup_sent_date, order.followup_last_date) if date]
+            # A quotation that was already sent when the module was installed has no recorded
+            # sending day: its quotation date stands for it, as in version 1.0.x.
+            sent = order.followup_sent_date or order.date_order
+            start = company.quote_followup_start_date
+            if start and fields.Datetime.context_timestamp(order, sent).date() < start:
+                # Old quotations are never chased by surprise. Only the day the quotation was
+                # sent counts here: a message written to the customer since does not bring an
+                # old quotation back into the follow-up.
+                continue
+            dates = [date for date in (sent, order.followup_last_date) if date]
             last_date, from_customer = exchanges.get(order._origin.id, (False, False))
             if last_date:
-                if from_customer and (not dates or last_date >= max(dates)):
+                if from_customer and last_date >= max(dates):
                     continue        # the customer answered: it is the salesperson's turn
                 dates.append(last_date)
-            if not dates:
-                continue            # sent before the module was installed and nothing exchanged since
-            reference = max(dates)
-            start = company.quote_followup_start_date
-            if start and fields.Datetime.context_timestamp(order, reference).date() < start:
-                continue            # old quotations are never chased by surprise
-            result[order.id] = reference + timedelta(days=max(company.quote_followup_days, 1))
+            result[order.id] = max(dates) + timedelta(days=max(company.quote_followup_days, 1))
         return result
 
     @api.depends("state", "followup_stop", "followup_count", "followup_last_date", "followup_sent_date",

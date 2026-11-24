@@ -154,10 +154,12 @@ msgstr "Ventes : relance de devis"
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_sent_date
 msgid ""
 "Set when the quotation becomes Quotation Sent. The follow-up delay starts "
-"here."
+"here. Empty for a quotation that was already sent when the module was "
+"installed: its quotation date is used."
 msgstr ""
 "Renseignée quand le devis passe à l'état Devis envoyé. Le délai de relance "
-"part de cette date."
+"part de cette date. Vide pour un devis déjà envoyé quand le module a été "
+"installé : sa date de devis est utilisée."
 
 #. module: ag_sale_quote_followup
 #: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_stop

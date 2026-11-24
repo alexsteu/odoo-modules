@@ -8,7 +8,10 @@
     "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["hr_timesheet", "account"],
-    "data": ["views/project_project_views.xml"],
+    "data": [
+        "views/project_project_views.xml",
+        "views/res_config_settings_views.xml",
+    ],
     "images": ["static/description/banner.png"],
     "price": 0,
     "currency": "EUR",

@@ -62,6 +62,34 @@ class TestVatRequired(AccountTestInvoicingCommon):
         invoice.action_post()
         self.assertEqual(invoice.state, "posted")
 
+    def _confirm_from_the_list(self, invoices):
+        """Invoice list > select > Actions > Confirm Entries."""
+        wizard = self.env["validate.account.move"].with_context(
+            active_model="account.move", active_ids=invoices.ids,
+        ).create({})
+        return wizard.validate_move()
+
+    def test_list_action_is_blocked_too(self):
+        """The list action does not go through the Confirm button of the form."""
+        invoices = self._invoice(self.company_without_vat) | self._invoice(self.company_without_vat)
+        with self.assertRaises(UserError):
+            self._confirm_from_the_list(invoices)
+        self.assertEqual(invoices.mapped("state"), ["draft", "draft"])
+
+    def test_list_action_still_posts_the_other_invoices(self):
+        invoices = self._invoice(self.individual) | self._invoice(self.individual)
+        self._confirm_from_the_list(invoices)
+        self.assertEqual(invoices.mapped("state"), ["posted", "posted"])
+
+    def test_invoice_posted_by_odoo_at_its_date_stays_in_draft(self):
+        """An invoice set to be posted automatically is not posted either: Odoo leaves it in draft
+        and writes the reason on the invoice."""
+        invoice = self._invoice(self.company_without_vat)
+        invoice.auto_post = "at_date"
+        self.env["account.move"]._autopost_draft_entries()
+        self.assertEqual(invoice.state, "draft")
+        self.assertIn("Atelier Durand SA", invoice.message_ids[0].body)
+
     def test_message_tells_how_to_fix(self):
         invoice = self._invoice(self.company_without_vat)
         with self.assertRaises(UserError) as error:

@@ -113,6 +113,8 @@ msgid "Sales Analysis Report"
 msgstr ""
 
 #. module: ag_product_brand
+#. odoo-python
+#: code:addons/ag_product_brand/models/product_brand.py:0
 #: model:ir.model.constraint,message:ag_product_brand.constraint_product_brand_name_uniq
 msgid "This brand already exists."
 msgstr ""

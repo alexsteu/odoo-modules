@@ -1,7 +1,7 @@
 from psycopg2 import IntegrityError
 
 from odoo import Command
-from odoo.exceptions import AccessError
+from odoo.exceptions import AccessError, ValidationError
 from odoo.tests import TransactionCase, tagged, new_test_user
 from odoo.tools import mute_logger
 
@@ -41,6 +41,25 @@ class TestProductBrand(TransactionCase):
     def test_brand_name_is_unique(self):
         with self.assertRaises(IntegrityError), mute_logger("odoo.sql_db"), self.env.cr.savepoint():
             self.env["product.brand"].create({"name": "Bosch Pro"})
+
+    def test_brand_name_is_unique_whatever_the_language_it_was_typed_in(self):
+        """In a database with two languages, the database rule alone accepts the same brand twice."""
+        self.env["res.lang"]._activate_lang("fr_FR")
+        french = self.env["product.brand"].with_context(lang="fr_FR")
+        with self.assertRaises(ValidationError):
+            french.create({"name": "Bosch Pro"})
+        festool = french.create({"name": "Festool"})
+        with self.assertRaises(ValidationError):
+            self.env["product.brand"].with_context(lang="en_US").create({"name": "Festool"})
+        with self.assertRaises(ValidationError):
+            festool.name = "Makita"                    # renaming to an existing brand
+
+    def test_archived_brand_can_be_renamed_and_restored(self):
+        """The check must not get in the way of ordinary changes on a brand."""
+        self.other_brand.active = False
+        self.other_brand.name = "Makita Tools"
+        self.other_brand.active = True
+        self.assertEqual(self.other_brand.name, "Makita Tools")
 
     def test_deleting_a_brand_keeps_the_products(self):
         self.brand.unlink()
