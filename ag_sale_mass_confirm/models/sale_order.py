@@ -20,7 +20,8 @@ class SaleOrder(models.Model):
                     quotation.action_confirm()
                 confirmed += 1
             except UserError as error:
-                failed.append("%s: %s" % (quotation.name, error.args[0] if error.args else error))
+                reason = str(error.args[0] if error.args else error)
+                failed.append(reason if quotation.name in reason else "%s: %s" % (quotation.name, reason))
         parts = [_("%s confirmed.", confirmed)]
         if skipped:
             parts.append(_("%s skipped (already confirmed or cancelled).", skipped))

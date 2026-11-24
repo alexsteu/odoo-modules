@@ -1,4 +1,5 @@
 from odoo import Command
+from odoo.exceptions import UserError
 from odoo.tests import TransactionCase, tagged, new_test_user
 
 
@@ -8,6 +9,9 @@ class TestMassConfirm(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         cls.partner = cls.env["res.partner"].create({"name": "Customer"})
         cls.product = cls.env["product.product"].create({"name": "Chair", "list_price": 50})
         cls.action = cls.env.ref("ag_sale_mass_confirm.action_sale_mass_confirm")
@@ -47,7 +51,6 @@ class TestMassConfirm(TransactionCase):
 
         def action_confirm(orders):
             if blocked in orders:
-                from odoo.exceptions import UserError
                 raise UserError("Customer on credit hold")
             return original(orders)
 
@@ -57,6 +60,19 @@ class TestMassConfirm(TransactionCase):
         self.assertEqual(blocked.state, "draft")
         self.assertIn(blocked.name, result["params"]["message"])
         self.assertIn("Customer on credit hold", result["params"]["message"])
+
+    def test_reason_that_already_names_the_quotation_is_not_prefixed_again(self):
+        blocked = self._quotation()
+        original = type(self.env["sale.order"]).action_confirm
+
+        def action_confirm(orders):
+            if blocked in orders:
+                raise UserError("%s cannot be confirmed: below the minimum." % blocked.name)
+            return original(orders)
+
+        self.patch(type(self.env["sale.order"]), "action_confirm", action_confirm)
+        message = self._run(blocked | self._quotation())["params"]["message"]
+        self.assertEqual(message.count(blocked.name), 1)
 
     def test_salesperson_can_use_it(self):
         salesman = new_test_user(self.env, login="mass_salesman", groups="sales_team.group_sale_salesman")
