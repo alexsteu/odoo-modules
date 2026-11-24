@@ -8,7 +8,7 @@
     "support": "alexandre@alexandregabriel.ch",
     "license": "LGPL-3",
     "depends": ["account"],
-    "data": [],
+    "data": ["views/res_partner_views.xml"],
     "images": ["static/description/banner.png"],
     "price": 0,
     "currency": "EUR",
