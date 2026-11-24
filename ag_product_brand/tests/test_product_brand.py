@@ -12,6 +12,9 @@ class TestProductBrand(TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         cls.brand = cls.env["product.brand"].create({"name": "Bosch Pro"})
         cls.other_brand = cls.env["product.brand"].create({"name": "Makita"})
         cls.drill = cls.env["product.template"].create({

@@ -16,6 +16,9 @@ class TestQuoteFollowup(TransactionCase, MockEmail):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # rules added by other modules of the suite must not decide the result of these tests
+        if "sale_minimum_amount" in cls.env.company._fields:
+            cls.env.company.sale_minimum_amount = 0
         settings = {
             "quote_followup_enabled": True,
             "quote_followup_days": 5,
