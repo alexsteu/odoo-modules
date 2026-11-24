@@ -12,4 +12,15 @@
             </xpath>
         </field>
     </record>
+    <record id="view_account_invoice_filter_ag_ai_bill" model="ir.ui.view">
+        <field name="name">account.invoice.select.ag.ai.bill</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <filter name="cancel" position="after">
+                <filter name="ag_ai_to_check" string="Read by AI, to check"
+                        domain="[('ag_ai_read', '=', True), ('state', '=', 'draft')]"/>
+            </filter>
+        </field>
+    </record>
 </odoo>
