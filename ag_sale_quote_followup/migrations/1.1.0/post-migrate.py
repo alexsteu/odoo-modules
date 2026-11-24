@@ -6,6 +6,10 @@ def migrate(cr, version):
     and wrong for an upgrade, where it would silently stop the follow-ups in progress.
     An empty date means "no limit", which is what 1.0.x did.
 
+    Only the companies where the follow-up was switched on are concerned. Where it was off,
+    nothing was in progress: the date stays at the day of the upgrade, so that switching the
+    follow-up on later does not chase every old quotation.
+
     1.0.x counted the delay from the quotation date. The quotations already sent keep that
     reference, since the day they were sent was not recorded.
 
@@ -14,7 +18,7 @@ def migrate(cr, version):
     """
     if not version:
         return
-    cr.execute("UPDATE res_company SET quote_followup_start_date = NULL")
+    cr.execute("UPDATE res_company SET quote_followup_start_date = NULL WHERE quote_followup_enabled")
     cr.execute(
         """
         UPDATE sale_order

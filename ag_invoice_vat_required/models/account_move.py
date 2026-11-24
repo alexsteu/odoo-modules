@@ -5,7 +5,9 @@ from odoo.exceptions import UserError
 class AccountMove(models.Model):
     _inherit = "account.move"
 
-    def action_post(self):
+    def _post(self, soft=True):
+        # Checked here and not in action_post: the list action "Confirm Entries", the invoices
+        # that Odoo posts by itself at their date and the Point of Sale all call _post directly.
         for move in self:
             partner = move.partner_id.commercial_partner_id
             if (
@@ -21,4 +23,4 @@ class AccountMove(models.Model):
                     partner=partner.display_name,
                     document=move.name if move.name and move.name != "/" else _("this invoice"),
                 ))
-        return super().action_post()
+        return super()._post(soft=soft)

@@ -159,6 +159,20 @@ class TestOverdueReminder(AccountTestInvoicingCommon, MockEmail):
         self.assertEqual(len(self._run("2026-03-20 08:00:00")), 1, "the reminder in progress goes on")
         self.assertEqual(invoice.overdue_reminder_count, 2)
 
+    def test_upgrade_leaves_the_date_where_the_reminders_were_off(self):
+        """Nothing was in progress there: switching them on later must not chase every old invoice."""
+        self.env.company.overdue_reminder_enabled = False
+        self.env.company.overdue_reminder_start_date = "2026-03-15"   # the day of the upgrade
+        invoice = self._invoice()                                     # due on 10 March
+        self.env.flush_all()
+        self._upgrade_script().migrate(self.env.cr, "18.0.1.0.1")
+        self.env.invalidate_all()
+        self.assertEqual(self.env.company.overdue_reminder_start_date, date(2026, 3, 15))
+
+        self.env.company.overdue_reminder_enabled = True
+        self.assertFalse(self._run("2026-03-20 08:00:00"))
+        self.assertEqual(invoice.overdue_reminder_count, 0)
+
     def test_upgrade_script_does_nothing_on_a_new_installation(self):
         self.env.company.overdue_reminder_start_date = "2026-03-15"
         self.env.flush_all()

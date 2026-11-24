@@ -164,3 +164,24 @@ class TestProjectProfitability(AccountTestInvoicingCommon):
         listing = self.env.ref("project.view_project").get_combined_arch()
         self.assertIn('name="ag_hours_spent"', listing)
         self.assertIn('name="ag_margin"', listing)
+
+    def test_analytic_accounting_can_be_switched_on_from_the_project_settings(self):
+        """Without Odoo's option Analytic Accounting, the column where an invoice is linked to the
+        project stays hidden and the revenue stays at 0. On Odoo Community, Odoo shows the option
+        to users with full accounting rights only: the module offers it in the Project settings."""
+        admin = new_test_user(
+            self.env, "ag_settings_admin",
+            groups="base.group_system,project.group_project_manager,account.group_account_invoice")
+        self.assertFalse(admin.has_group("account.group_account_user"), "no full accounting rights")
+        Settings = self.env["res.config.settings"].with_user(admin)
+        settings_screen = Settings.get_view(view_type="form")["arch"]
+        self.assertIn('id="ag_analytic_accounting_setting"', settings_screen)
+        self.assertEqual(settings_screen.count('name="group_analytic_accounting"'), 1)
+
+        invoice_screen = self.env["account.move"].with_user(admin).get_view(view_type="form")["arch"]
+        if admin.has_group("analytic.group_analytic_accounting"):
+            return      # the option is already on in this database
+        self.assertNotIn("analytic_distribution", invoice_screen)
+        Settings.create({"group_analytic_accounting": True}).execute()
+        invoice_screen = self.env["account.move"].with_user(admin).get_view(view_type="form")["arch"]
+        self.assertIn("analytic_distribution", invoice_screen)
