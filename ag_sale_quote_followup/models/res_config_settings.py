@@ -13,3 +13,6 @@ class ResConfigSettings(models.TransientModel):
     quote_followup_max = fields.Integer(
         related="company_id.quote_followup_max", readonly=False
     )
+    quote_followup_start_date = fields.Date(
+        related="company_id.quote_followup_start_date", readonly=False
+    )

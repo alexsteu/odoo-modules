@@ -16,6 +16,14 @@
                             <label for="quote_followup_max" string="at most"/>
                             <field name="quote_followup_max" class="oe_inline"/> times
                         </div>
+                        <div class="mt8">
+                            <label for="quote_followup_start_date" string="Only quotations sent since"/>
+                            <field name="quote_followup_start_date" class="oe_inline"/>
+                        </div>
+                        <div class="text-muted mt8">
+                            No reminder when the customer has answered in the chatter, when the quotation
+                            has expired or when you tick "No automatic follow-up" on it.
+                        </div>
                     </div>
                 </setting>
             </xpath>
