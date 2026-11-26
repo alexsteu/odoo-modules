@@ -1,0 +1,187 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_sale_quote_followup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20261112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:10+0000\n"
+"PO-Revision-Date: 2026-11-24 20:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,body_html:ag_sale_quote_followup.mail_template_quote_followup
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p>Hello<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
+"    <p>I am coming back to you about quotation <strong t-out=\"object.name or ''\"/>\n"
+"        (<t t-out=\"format_amount(object.amount_total, object.currency_id) or ''\"/>).</p>\n"
+"    <p>Do you have any question, or would you like me to adjust something?\n"
+"        You can review and sign it online here:</p>\n"
+"    <p><a t-att-href=\"object.get_portal_url()\" style=\"background-color:#875A7B;padding:8px 16px;color:#fff;border-radius:5px;text-decoration:none;\">View the quotation</a></p>\n"
+"    <p>Best regards,<br/><t t-out=\"object.user_id.name or object.company_id.name or ''\"/></p>\n"
+"</div>\n"
+"        "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p>Bonjour<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
+"    <p>Je reviens vers vous au sujet du devis <strong t-out=\"object.name or ''\"/>\n"
+"        (<t t-out=\"format_amount(object.amount_total, object.currency_id) or ''\"/>).</p>\n"
+"    <p>Avez-vous des questions, ou souhaitez-vous que j'adapte quelque chose ?\n"
+"        Vous pouvez le consulter et le signer en ligne ici :</p>\n"
+"    <p><a t-att-href=\"object.get_portal_url()\" style=\"background-color:#875A7B;padding:8px 16px;color:#fff;border-radius:5px;text-decoration:none;\">Voir le devis</a></p>\n"
+"    <p>Cordialement,<br/><t t-out=\"object.user_id.name or object.company_id.name or ''\"/></p>\n"
+"</div>\n"
+"        "
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "After"
+msgstr "Après"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_enabled
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_enabled
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "Automatic quotation follow-up"
+msgstr "Relance automatique des devis"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_next_date
+msgid ""
+"Day the next reminder will be e-mailed to the customer. Empty when none is "
+"planned: quotation not sent, follow-up stopped, maximum reached, quotation "
+"expired, customer without e-mail, or customer who already answered."
+msgstr ""
+"Date d'envoi de la prochaine relance au client. Vide quand aucune n'est "
+"prévue : devis non envoyé, relances arrêtées, maximum atteint, devis expiré,"
+" client sans e-mail ou client qui a déjà répondu."
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "E-mail customers who did not answer a sent quotation"
+msgstr "Envoyez un e-mail aux clients qui n'ont pas répondu à un devis envoyé"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_start_date
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
+msgid "Follow up quotations sent since"
+msgstr "Relancer les devis envoyés depuis le"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_days
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_days
+msgid "Follow-up after (days)"
+msgstr "Relance après (jours)"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_count
+msgid "Follow-ups sent"
+msgstr "Relances envoyées"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_last_date
+msgid "Last follow-up"
+msgstr "Dernière relance"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_max
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_max
+msgid "Maximum follow-ups"
+msgstr "Nombre maximum de relances"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_next_date
+msgid "Next automatic follow-up"
+msgstr "Prochaine relance automatique"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_stop
+msgid "No automatic follow-up"
+msgstr "Pas de relance automatique"
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid ""
+"No reminder when the customer has answered in the chatter, when the quotation\n"
+"                            has expired or when you tick \"No automatic follow-up\" on it."
+msgstr ""
+"Aucune relance si le client a répondu dans le fil de discussion, si le devis"
+" a expiré ou si vous cochez « Pas de relance automatique » sur le devis."
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "Only quotations sent since"
+msgstr "Seulement les devis envoyés depuis le"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_sent_date
+msgid "Quotation sent on"
+msgstr "Devis envoyé le"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_res_company__quote_followup_start_date
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
+msgid ""
+"Quotations sent before this date are never followed up automatically. On a "
+"new installation it is set to the day the module is installed, so that old "
+"quotations are not chased by surprise. Leave it empty to follow up every "
+"sent quotation."
+msgstr ""
+"Les devis envoyés avant cette date ne sont jamais relancés automatiquement. "
+"À une nouvelle installation, la date est fixée au jour d'installation du "
+"module, pour que les anciens devis ne soient pas relancés par surprise. "
+"Laissez la date vide pour relancer tous les devis envoyés."
+
+#. module: ag_sale_quote_followup
+#: model:ir.actions.server,name:ag_sale_quote_followup.ir_cron_quote_followup_ir_actions_server
+msgid "Sales: automatic quotation follow-up"
+msgstr "Ventes : relance automatique des devis"
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,name:ag_sale_quote_followup.mail_template_quote_followup
+msgid "Sales: quotation follow-up"
+msgstr "Ventes : relance de devis"
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_sent_date
+msgid ""
+"Set when the quotation becomes Quotation Sent. The follow-up delay starts "
+"here. Empty for a quotation that was already sent when the module was "
+"installed: its quotation date is used."
+msgstr ""
+"Renseignée quand le devis passe à l'état Devis envoyé. Le délai de relance "
+"part de cette date. Vide pour un devis déjà envoyé quand le module a été "
+"installé : sa date de devis est utilisée."
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_stop
+msgid "Tick to never send automatic reminders for this quotation."
+msgstr "Cochez pour ne jamais envoyer de relance automatique pour ce devis."
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "at most"
+msgstr "au maximum"
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "days,"
+msgstr "jours,"
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "times"
+msgstr "fois"
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,subject:ag_sale_quote_followup.mail_template_quote_followup
+msgid "{{ object.company_id.name }} - your quotation {{ object.name }}"
+msgstr "{{ object.company_id.name }} - votre devis {{ object.name }}"

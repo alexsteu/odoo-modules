@@ -1,7 +1,7 @@
 {
     "name": "Product Brand",
     "summary": "Add a brand to your products, then filter and group sales and products by brand",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

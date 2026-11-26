@@ -1,0 +1,179 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_sale_quote_followup
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20261112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:10+0000\n"
+"PO-Revision-Date: 2026-11-24 20:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,body_html:ag_sale_quote_followup.mail_template_quote_followup
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"    <p>Hello<t t-if=\"not object.partner_id.is_company\"> <t t-out=\"object.partner_id.name or ''\"/></t>,</p>\n"
+"    <p>I am coming back to you about quotation <strong t-out=\"object.name or ''\"/>\n"
+"        (<t t-out=\"format_amount(object.amount_total, object.currency_id) or ''\"/>).</p>\n"
+"    <p>Do you have any question, or would you like me to adjust something?\n"
+"        You can review and sign it online here:</p>\n"
+"    <p><a t-att-href=\"object.get_portal_url()\" style=\"background-color:#875A7B;padding:8px 16px;color:#fff;border-radius:5px;text-decoration:none;\">View the quotation</a></p>\n"
+"    <p>Best regards,<br/><t t-out=\"object.user_id.name or object.company_id.name or ''\"/></p>\n"
+"</div>\n"
+"        "
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "After"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_enabled
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_enabled
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "Automatic quotation follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model,name:ag_sale_quote_followup.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model,name:ag_sale_quote_followup.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_next_date
+msgid ""
+"Day the next reminder will be e-mailed to the customer. Empty when none is "
+"planned: quotation not sent, follow-up stopped, maximum reached, quotation "
+"expired, customer without e-mail, or customer who already answered."
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "E-mail customers who did not answer a sent quotation"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_start_date
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
+msgid "Follow up quotations sent since"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_days
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_days
+msgid "Follow-up after (days)"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_count
+msgid "Follow-ups sent"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_last_date
+msgid "Last follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_company__quote_followup_max
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_res_config_settings__quote_followup_max
+msgid "Maximum follow-ups"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_next_date
+msgid "Next automatic follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_stop
+msgid "No automatic follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid ""
+"No reminder when the customer has answered in the chatter, when the quotation\n"
+"                            has expired or when you tick \"No automatic follow-up\" on it."
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "Only quotations sent since"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,field_description:ag_sale_quote_followup.field_sale_order__followup_sent_date
+msgid "Quotation sent on"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_res_company__quote_followup_start_date
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_res_config_settings__quote_followup_start_date
+msgid ""
+"Quotations sent before this date are never followed up automatically. On a "
+"new installation it is set to the day the module is installed, so that old "
+"quotations are not chased by surprise. Leave it empty to follow up every "
+"sent quotation."
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model,name:ag_sale_quote_followup.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.actions.server,name:ag_sale_quote_followup.ir_cron_quote_followup_ir_actions_server
+msgid "Sales: automatic quotation follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,name:ag_sale_quote_followup.mail_template_quote_followup
+msgid "Sales: quotation follow-up"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_sent_date
+msgid ""
+"Set when the quotation becomes Quotation Sent. The follow-up delay starts "
+"here. Empty for a quotation that was already sent when the module was "
+"installed: its quotation date is used."
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:ir.model.fields,help:ag_sale_quote_followup.field_sale_order__followup_stop
+msgid "Tick to never send automatic reminders for this quotation."
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "at most"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "days,"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model_terms:ir.ui.view,arch_db:ag_sale_quote_followup.res_config_settings_view_form_quote_followup
+msgid "times"
+msgstr ""
+
+#. module: ag_sale_quote_followup
+#: model:mail.template,subject:ag_sale_quote_followup.mail_template_quote_followup
+msgid "{{ object.company_id.name }} - your quotation {{ object.name }}"
+msgstr ""

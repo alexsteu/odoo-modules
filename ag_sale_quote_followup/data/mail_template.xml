@@ -10,7 +10,7 @@
         <field name="auto_delete" eval="True"/>
         <field name="body_html" type="html">
 <div style="margin: 0px; padding: 0px;">
-    <p>Hello <t t-out="object.partner_id.name or ''"/>,</p>
+    <p>Hello<t t-if="not object.partner_id.is_company"> <t t-out="object.partner_id.name or ''"/></t>,</p>
     <p>I am coming back to you about quotation <strong t-out="object.name or ''"/>
         (<t t-out="format_amount(object.amount_total, object.currency_id) or ''"/>).</p>
     <p>Do you have any question, or would you like me to adjust something?

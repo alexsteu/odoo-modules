@@ -7,8 +7,9 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='other_information']//group[@name='sale_info']" position="inside">
                 <field name="followup_stop"/>
-                <field name="followup_count"/>
-                <field name="followup_last_date"/>
+                <field name="followup_next_date" invisible="not followup_next_date"/>
+                <field name="followup_count" invisible="not followup_count"/>
+                <field name="followup_last_date" invisible="not followup_last_date"/>
             </xpath>
         </field>
     </record>

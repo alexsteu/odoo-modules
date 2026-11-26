@@ -1,7 +1,7 @@
 {
     "name": "AI Quotation from Customer E-mail (ChatGPT, Claude)",
     "summary": "Paste a customer e-mail: AI finds the customer and your products and fills the quotation for you",
-    "version": "18.0.1.0.0",
+    "version": "18.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

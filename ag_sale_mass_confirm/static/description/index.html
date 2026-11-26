@@ -1,29 +1,62 @@
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan">Confirm Several Quotations</h2>
-    <h3 class="oe_slogan">Stop opening quotations one by one to confirm them</h3>
-    <p style="text-align:center;margin-top:8px"><i>Free module by an independent Odoo developer. Need it adapted to your company? <a href="#ag-custom">See below</a>.</i></p>
-    <div class="oe_span12">
-      <ul>
-        <li>Select quotations in the Sales list, then <b>Actions &gt; Confirm selected quotations</b>.</li>
-        <li>Only draft and sent quotations are confirmed; confirmed or cancelled orders are skipped.</li>
-        <li>A notification tells you how many were confirmed and how many were skipped.</li>
-        <li>Uses the standard Odoo confirmation, so your existing rules and automations still apply.</li>
-        <li>Available to salespeople.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="oe_container oe_dark" id="ag-custom">
-  <div class="oe_row oe_spaced" style="text-align:center">
-    <h2 class="oe_slogan">Want this module adapted to your company?</h2>
-    <h3 class="oe_slogan">I adapt it to the way you work, or build the small Odoo feature you are missing.</h3>
-    <p>Odoo 17 and 18, Community or Enterprise. Fixed price announced before I start, paid on delivery.</p>
-    <p style="margin:24px 0">
-      <a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Confirm%20Several%20Quotations" style="background:#714B67;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold">Describe your need in 2 lines, fixed price within 24 h</a>
-    </p>
-    <p>alexandre@alexandregabriel.ch &middot; <a href="https://alexandregabriel.ch/?v=odoo">alexandregabriel.ch</a></p>
-    <p><i>En fran&ccedil;ais : d&eacute;crivez votre besoin en deux lignes, je vous r&eacute;ponds avec un prix fixe sous 24 h.</i></p>
-  </div>
-</section>
+<div style="font-family:Inter,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2B323B; text-align:left; max-width:880px; margin:0 auto; padding:8px 0 40px 0">
+<p style="margin:0 0 12px 0; font-size:14px; line-height:20px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#714B67">Free module for Odoo 18 &#183; Sales</p>
+<h2 style="margin:0 0 14px 0; font-size:30px; line-height:38px; font-weight:600; color:#14181D; max-width:800px">Select several quotations in the list and confirm them all with one action.</h2>
+<p style="margin:0 0 14px 0; font-size:18px; line-height:28px; color:#2B323B; max-width:720px">For sales teams who confirm many quotations one by one.</p>
+<p style="margin:0 0 24px 0; font-size:14px; line-height:22px; color:#55606E; max-width:720px">Tested on Odoo 18 Community &#183; 6 automated tests &#183; English and French &#183; LGPL-3<br/>By Alexandre Gabriel, independent Odoo developer. Need it adapted to your company? <a href="#ag-custom" style="color:#714B67; font-weight:600; text-decoration:underline">See below</a>.</p>
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:597px">
+<img src="screenshot_action.png" alt="Odoo quotation list with 3 quotations selected and the Actions menu open; its last entry is Confirm selected quotations." width="579" height="359" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">Three quotations selected, and the new entry at the bottom of the Actions menu. <span style="white-space:nowrap">Demo data.</span></p>
+<h3 style="margin:12px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">How it works</h3>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">1.</span> Tick the quotations.</p>
+<p style="margin:0">In the quotation list.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">2.</span> Choose Actions &#8250; Confirm selected quotations.</p>
+<p style="margin:0">Each quotation goes through the normal confirmation of Odoo.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">3.</span> Read the result.</p>
+<p style="margin:0">Odoo tells you how many were confirmed, how many were skipped because they were already confirmed or cancelled, and which were not confirmed, with the reason.</p>
+</div>
+<div style="margin:24px 0 0 0">
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:417px">
+<img src="screenshot_result.png" alt="Odoo notification Quotations confirmed: 2 confirmed. 1 not confirmed: S00209 cannot be confirmed: its untaxed amount is $ 89.00 and the minimum order amount is $ 500.00." width="399" height="123" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The result of an earlier run on the same demo data: two quotations confirmed, and one refused by another module of this suite, Minimum Order Amount. <span style="white-space:nowrap">Demo data.</span></p>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Settings</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Nothing to configure. The action is available to salespeople.</p>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Good to know</h3>
+<div style="margin:0 0 8px 0; padding:16px 20px 8px 20px; border:1px solid #D9C27A; border-left-width:4px; border-left-color:#8A5A00; border-radius:6px; background-color:#FFF9E8; max-width:720px">
+<ul style="margin:0; padding:0 0 0 18px">
+<li style="margin:0 0 8px 0">A quotation that cannot be confirmed does not stop the others.</li>
+<li style="margin:0 0 8px 0">The checks are those of the normal confirmation. The module adds none and removes none.</li>
+<li style="margin:0 0 8px 0">There is no undo. A confirmed quotation is a sales order, as usual.</li>
+</ul>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Compatibility</h3>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 8px 0; font-size:15px; line-height:22px; color:#2B323B">
+<tbody>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo 18 Community. Developed and tested with 6 automated tests for this module, 181 for the whole suite of 18 modules.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Not tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo Enterprise.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Odoo 17</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">A 17.0 version exists on its own branch.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Needs</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">The Odoo app Sales.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Languages</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">English and French. No German translation.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Licence</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">LGPL-3. Free.</td></tr>
+</tbody></table>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Upgrading from version 18.0.1.0.x</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Replace the code, then upgrade on the command line, before anyone signs in, all the modules of this suite that are installed, in one go:</p>
+<p style="margin:0 0 12px 0; padding:10px 14px; border:1px solid #D0D5DD; border-radius:6px; background-color:#F5F6F8; font-family:Menlo,Consolas,'Liberation Mono',monospace; font-size:14px; line-height:22px; color:#14181D; max-width:690px">odoo-bin -d &lt;database&gt; -u &lt;module&gt;,&lt;module&gt; --stop-after-init</p>
+<p style="margin:0 0 12px 0; max-width:720px">Three modules of the suite add fields to contacts and companies. Until they are upgraded, Odoo refuses the sign-in.</p>
+<div id="ag-custom" style="margin:44px 0 0 0; padding:22px 24px 20px 24px; border:1px solid #D0D5DD; border-top-width:4px; border-top-color:#714B67; border-radius:6px; background-color:#F5F6F8; max-width:720px">
+<h3 style="margin:0 0 8px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Want this module adapted to your company?</h3>
+<p style="margin:0 0 6px 0; max-width:720px">I adapt it to the way you work, or build the small Odoo feature you are missing.</p>
+<p style="margin:0 0 16px 0; max-width:720px">Fixed price announced before I start, paid on delivery. I answer within one working day, with that price or with the question I still need to set it.</p>
+<p style="margin:0 0 16px 0"><a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Confirm%20Several%20Quotations" style="display:inline-block; padding:10px 18px; border:2px solid #714B67; border-radius:6px; background-color:#FFFFFF; color:#714B67; font-weight:600; text-decoration:underline">Describe your need in 2 lines</a></p>
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D">Alexandre Gabriel, independent Odoo developer in Lausanne</p>
+<p style="margin:0 0 10px 0">alexandre@alexandregabriel.ch &#183; <a href="https://alexandregabriel.ch/?v=odoo" style="color:#714B67; font-weight:600; text-decoration:underline">alexandregabriel.ch</a></p>
+<p lang="fr" style="margin:0; font-size:15px; line-height:22px; font-style:italic; color:#55606E">En fran&#231;ais : d&#233;crivez votre besoin en deux lignes. Je vous r&#233;ponds sous un jour ouvr&#233;, avec un prix fixe ou la question qui me manque pour le fixer.</p>
+</div>
+</div>

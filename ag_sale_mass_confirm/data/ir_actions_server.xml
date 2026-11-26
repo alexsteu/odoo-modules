@@ -7,20 +7,6 @@
         <field name="binding_view_types">list</field>
         <field name="groups_id" eval="[(4, ref('sales_team.group_sale_salesman'))]"/>
         <field name="state">code</field>
-        <field name="code">
-quotes = records.filtered(lambda o: o.state in ('draft', 'sent'))
-if quotes:
-    quotes.action_confirm()
-action = {
-    'type': 'ir.actions.client',
-    'tag': 'display_notification',
-    'params': {
-        'title': 'Quotations confirmed',
-        'message': '%s confirmed, %s skipped (already confirmed or cancelled).' % (len(quotes), len(records) - len(quotes)),
-        'type': 'success',
-        'next': {'type': 'ir.actions.act_window_close'},
-    },
-}
-        </field>
+        <field name="code">action = records.action_ag_mass_confirm()</field>
     </record>
 </odoo>

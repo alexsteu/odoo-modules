@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_sale_minimum_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0-20261112\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 19:35+0000\n"
+"PO-Revision-Date: 2026-11-24 19:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ag_sale_minimum_order
+#. odoo-python
+#: code:addons/ag_sale_minimum_order/models/sale_order.py:0
+msgid ""
+"%(order)s cannot be confirmed: its untaxed amount is %(amount)s and the "
+"minimum order amount is %(minimum)s."
+msgstr ""
+"%(order)s ne peut pas être confirmé : son montant hors taxes est de "
+"%(amount)s et le minimum de commande est de %(minimum)s."
+
+#. module: ag_sale_minimum_order
+#: model:ir.model.fields,field_description:ag_sale_minimum_order.field_res_config_settings__company_currency_id
+msgid "Company Currency"
+msgstr "Devise de la société"
+
+#. module: ag_sale_minimum_order
+#: model_terms:ir.ui.view,arch_db:ag_sale_minimum_order.res_config_settings_minimum_order
+msgid "Minimum order amount"
+msgstr "Minimum de commande"
+
+#. module: ag_sale_minimum_order
+#: model:ir.model.fields,field_description:ag_sale_minimum_order.field_res_company__sale_minimum_amount
+#: model:ir.model.fields,field_description:ag_sale_minimum_order.field_res_config_settings__sale_minimum_amount
+msgid "Minimum order amount (untaxed)"
+msgstr "Minimum de commande (hors taxes)"
+
+#. module: ag_sale_minimum_order
+#: model_terms:ir.ui.view,arch_db:ag_sale_minimum_order.res_config_settings_minimum_order
+msgid "Orders below this untaxed amount cannot be confirmed (0 = no minimum)"
+msgstr ""
+"Les commandes sous ce montant hors taxes ne peuvent pas être confirmées (0 ="
+" pas de minimum)"

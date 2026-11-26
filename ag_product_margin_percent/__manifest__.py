@@ -1,7 +1,7 @@
 {
     "name": "Product Margin % in List",
     "summary": "See the margin percentage of each product next to its sales price",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",

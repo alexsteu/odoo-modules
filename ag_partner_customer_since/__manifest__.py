@@ -1,7 +1,7 @@
 {
     "name": "Customer Since",
     "summary": "Show the date of the first confirmed sales order on each customer",
-    "version": "18.0.1.0.1",
+    "version": "18.0.1.1.0",
     "category": "Sales/Sales",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",
