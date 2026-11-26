@@ -1,0 +1,81 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_project_profitability
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_hours_spent
+msgid "Hours spent"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_margin
+msgid "Margin"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_margin_percent
+msgid "Margin %"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_other_costs
+msgid "Other costs"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model_terms:ir.ui.view,arch_db:ag_project_profitability.edit_project_ag_profitability
+msgid "Profitability"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model,name:ag_project_profitability.model_project_project
+msgid "Project"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model_terms:ir.ui.view,arch_db:ag_project_profitability.edit_project_ag_profitability
+msgid "Result"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_revenue
+msgid "Revenue"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model_terms:ir.ui.view,arch_db:ag_project_profitability.res_config_settings_view_form
+msgid ""
+"Shows the column Analytic Distribution on invoice and bill lines. Pick the "
+"project there: the Profitability tab reads revenue and other costs from it."
+msgstr ""
+
+#. module: ag_project_profitability
+#: model_terms:ir.ui.view,arch_db:ag_project_profitability.edit_project_ag_profitability
+msgid "Time"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model:ir.model.fields,field_description:ag_project_profitability.field_project_project__ag_timesheet_cost
+msgid "Timesheet cost"
+msgstr ""
+
+#. module: ag_project_profitability
+#: model_terms:ir.ui.view,arch_db:ag_project_profitability.edit_project_ag_profitability
+msgid ""
+"Timesheet cost uses the hourly cost of each employee. Revenue and other "
+"costs come from the analytic account of the project (invoices and vendor "
+"bills with that analytic distribution)."
+msgstr ""

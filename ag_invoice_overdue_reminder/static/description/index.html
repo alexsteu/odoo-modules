@@ -1,32 +1,91 @@
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan">Overdue Invoice Reminder</h2>
-    <h3 class="oe_slogan">Get paid faster, without writing a single reminder by hand</h3>
-    <p style="text-align:center;margin-top:8px"><i>Free module by an independent Odoo developer. Need it adapted to your company? <a href="#ag-custom">See below</a>.</i></p>
-    <div class="oe_span12">
-      <p>Odoo Community has no automatic payment follow-up. This module adds a simple one: every day it e-mails customers whose invoice is past its due date.</p>
-      <ul>
-        <li>Only posted customer invoices that are <b>not paid</b> or <b>partially paid</b> and past their due date.</li>
-        <li>A reminder every X days (7 by default), at most N times (3 by default).</li>
-        <li>The e-mail shows the open amount and a button to view and pay the invoice online. It is logged in the chatter.</li>
-        <li>Turn it off for one invoice with <b>No automatic reminder</b> (Other Info tab).</li>
-        <li>Editable e-mail template: <i>Invoicing: overdue invoice reminder</i>.</li>
-      </ul>
-      <h3>Setup</h3>
-      <p>Invoicing &gt; Configuration &gt; Settings &gt; Customer Payments &gt; Overdue invoice reminders.</p>
-    </div>
-  </div>
-</section>
-
-<section class="oe_container oe_dark" id="ag-custom">
-  <div class="oe_row oe_spaced" style="text-align:center">
-    <h2 class="oe_slogan">Want this module adapted to your company?</h2>
-    <h3 class="oe_slogan">I adapt it to the way you work, or build the small Odoo feature you are missing.</h3>
-    <p>Odoo 17 and 18, Community or Enterprise. Fixed price announced before I start, paid on delivery.</p>
-    <p style="margin:24px 0">
-      <a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Overdue%20Invoice%20Reminder%20%28Community%29" style="background:#714B67;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold">Describe your need in 2 lines, fixed price within 24 h</a>
-    </p>
-    <p>alexandre@alexandregabriel.ch &middot; <a href="https://alexandregabriel.ch/?v=odoo">alexandregabriel.ch</a></p>
-    <p><i>En fran&ccedil;ais : d&eacute;crivez votre besoin en deux lignes, je vous r&eacute;ponds avec un prix fixe sous 24 h.</i></p>
-  </div>
-</section>
+<div style="font-family:Inter,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2B323B; text-align:left; max-width:880px; margin:0 auto; padding:8px 0 40px 0">
+<p style="margin:0 0 12px 0; font-size:14px; line-height:20px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#714B67">Free module for Odoo 17 &#183; Invoicing</p>
+<h2 style="margin:0 0 14px 0; font-size:30px; line-height:38px; font-weight:600; color:#14181D; max-width:800px">When a customer invoice is past its due date, Odoo <span style="white-space:nowrap">e-mails</span> the reminder for you.</h2>
+<p style="margin:0 0 14px 0; font-size:18px; line-height:28px; color:#2B323B; max-width:720px">For small companies on Odoo Community who chase late payments by hand.</p>
+<p style="margin:0 0 24px 0; font-size:14px; line-height:22px; color:#55606E; max-width:720px">19 automated tests on Odoo 17 Community &#183; screenshots from the Odoo 18 version &#183; English and French &#183; LGPL-3<br/>By Alexandre Gabriel, independent Odoo developer. Need it adapted to your company? <a href="#ag-custom" style="color:#714B67; font-weight:600; text-decoration:underline">See below</a>.</p>
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:424px">
+<img src="screenshot_settings.png" alt="Odoo Invoicing settings, block Overdue invoice reminders: first reminder 3 days after the due date, then every 7 days, at most 3 times, only invoices due since 11/22/2026." width="406" height="273" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The settings, in Invoicing. Here: first reminder 3 days after the due date, then every 7 days, at most 3 times. Demo data, shown in the Odoo 18 version.</p>
+<h3 style="margin:12px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">How it works</h3>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">1.</span> Post your invoices as usual.</p>
+<p style="margin:0">The module watches posted customer invoices that are not paid or only partly paid, past their due date, for customers who have an <span style="white-space:nowrap">e-mail</span> address.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">2.</span> Odoo reminds on your schedule.</p>
+<p style="margin:0">Once a day, Odoo checks. It sends an <span style="white-space:nowrap">e-mail</span> with the open amount and a <b style="font-weight:600; color:#14181D">View the invoice</b> button: a first time some days after the due date, then at the interval you chose.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">3.</span> It stops when the invoice is paid.</p>
+<p style="margin:0">No more reminder once the invoice is paid, when the maximum is reached, or when you tick <b style="font-weight:600; color:#14181D">No automatic reminder</b> on the invoice.</p>
+</div>
+<div style="margin:24px 0 0 0">
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:501px">
+<img src="screenshot_invoice.png" alt="Other Info tab of a posted customer invoice: box No automatic reminder, next automatic reminder on 11/26/2026." width="483" height="125" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">On each invoice, Other Info tab: the day of the next reminder and a box to stop them. Demo data, shown in the Odoo 18 version.</p>
+</div>
+<p style="margin:28px 0 8px 0; font-weight:600; color:#14181D; max-width:720px">What your customer receives</p>
+<div style="margin:0 0 8px 0; padding:16px 20px 8px 20px; border:1px solid #D0D5DD; border-radius:6px; background-color:#F5F6F8; max-width:680px">
+<p style="margin:0 0 12px 0; padding:0 0 10px 0; border-bottom:1px solid #D0D5DD; font-size:15px; line-height:22px; color:#55606E">Subject: <b style="font-weight:600; color:#14181D">YourCompany - reminder for invoice INV/2026/00012</b></p>
+<p style="margin:0 0 10px 0">Hello Marc Rochat,</p>
+<p style="margin:0 0 10px 0">Unless we missed your payment, invoice <b style="font-weight:600; color:#14181D">INV/2026/00012</b> was due on 11/10/2026. The amount still open is <b style="font-weight:600; color:#14181D">1,150.00 CHF</b>.</p>
+<p style="margin:0 0 10px 0">You can view and pay it online here:</p>
+<p style="margin:0 0 10px 0"><span style="display:inline-block; padding:6px 14px; border:1px solid #714B67; border-radius:5px; background-color:#FFFFFF; font-weight:600; color:#714B67">View the invoice</span></p>
+<p style="margin:0 0 10px 0">If you already paid, please ignore this message. Thank you!</p>
+<p style="margin:0 0 0px 0">Best regards,</p>
+<p style="margin:0 0 10px 0">YourCompany</p>
+</div>
+<p style="margin:0 0 8px 0; font-size:14px; line-height:22px; color:#55606E; max-width:720px">The standard English text, with example values. The greeting names a person, never a company. French-speaking customers get the French text. You can rewrite both.</p>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Settings</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Where: <b style="font-weight:600; color:#14181D">Invoicing &#8250; Configuration &#8250; Settings &#8250; Customer Payments &#8250; Overdue invoice reminders</b></p>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 16px 0; font-size:15px; line-height:22px; color:#2B323B">
+<thead><tr><th scope="col" style="text-align:left; vertical-align:bottom; width:28%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Setting</th><th scope="col" style="text-align:left; vertical-align:bottom; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">What it does</th><th scope="col" style="text-align:left; vertical-align:bottom; width:19%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Default</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Overdue invoice reminders</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Switches the reminders on or off.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">On</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">First reminder &#8230; days after the due date</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Days of grace before the first reminder. A transfer made on the due date takes a few days to reach your bank.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">3</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">then every &#8230; days</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Interval between two reminders.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">7</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">at most &#8230; times</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Maximum number of reminders for one invoice.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">3</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Only invoices due since</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Invoices due before this date are never chased. Empty means no limit.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Day of installation</td></tr>
+</tbody></table>
+<p style="margin:0 0 12px 0; max-width:720px">The text of the <span style="white-space:nowrap">e-mail</span> is the template <b style="font-weight:600; color:#14181D">Invoicing: overdue invoice reminder</b>. Edit it in Settings &#8250; Technical &#8250; Email Templates (developer mode).</p>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Good to know</h3>
+<div style="margin:0 0 8px 0; padding:16px 20px 8px 20px; border:1px solid #D9C27A; border-left-width:4px; border-left-color:#8A5A00; border-radius:6px; background-color:#FFF9E8; max-width:720px">
+<ul style="margin:0; padding:0 0 0 18px">
+<li style="margin:0 0 8px 0">The reminders are on as soon as the module is installed. Only invoices due from that day on are chased.</li>
+<li style="margin:0 0 8px 0">Customer invoices only. Credit notes are not chased.</li>
+<li style="margin:0 0 8px 0">The <span style="white-space:nowrap">e-mail</span> is in French for customers whose language is French, in English for all others.</li>
+<li style="margin:0 0 8px 0">Odoo must be able to send <span style="white-space:nowrap">e-mails</span>: an outgoing mail server has to be configured.</li>
+</ul>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Compatibility</h3>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 8px 0; font-size:15px; line-height:22px; color:#2B323B">
+<tbody>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo 17 Community. Developed and tested with 19 automated tests for this module, 182 for the whole suite of 18 modules.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Screenshots</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Taken in the Odoo 18 version of this module. The screens of the Odoo 17 version were opened in a browser: what the module adds is there, and no error was shown.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Not tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo Enterprise.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Odoo 18</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">An 18.0 version exists on its own branch.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Needs</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">The Odoo app Invoicing.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Languages</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">English and French. No German translation.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Licence</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">LGPL-3. Free.</td></tr>
+</tbody></table>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Upgrading from version 17.0.1.0.x</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Replace the code, then upgrade on the command line, before anyone signs in, all the modules of this suite that are installed, in one go:</p>
+<p style="margin:0 0 12px 0; padding:10px 14px; border:1px solid #D0D5DD; border-radius:6px; background-color:#F5F6F8; font-family:Menlo,Consolas,'Liberation Mono',monospace; font-size:14px; line-height:22px; color:#14181D; max-width:690px">odoo-bin -d &lt;database&gt; -u &lt;module&gt;,&lt;module&gt; --stop-after-init</p>
+<p style="margin:0 0 12px 0; max-width:720px">Three modules of the suite add fields to contacts and companies. Until they are upgraded, Odoo refuses the sign-in.</p>
+<ul style="margin:0 0 8px 0; padding:0 0 0 18px; max-width:702px">
+<li style="margin:0 0 8px 0">The reminders in progress go on as before: where the reminders were switched on, the date <b style="font-weight:600; color:#14181D">Only invoices due since</b> is left empty, which means no limit. Set a date there to stop chasing older invoices. In a company where the reminders were switched off, the date is the day of the upgrade.</li>
+<li style="margin:0 0 8px 0">The <span style="white-space:nowrap">e-mail</span> text you may have rewritten is kept. This version adds a French text. If French is active in your database and you had rewritten the text in English only, your French-speaking customers now receive the standard French text: review the French version of the template.</li>
+<li style="margin:0 0 8px 0">To get the new English wording, open the template and click <b style="font-weight:600; color:#14181D">Reset Template</b>.</li>
+</ul>
+<div id="ag-custom" style="margin:44px 0 0 0; padding:22px 24px 20px 24px; border:1px solid #D0D5DD; border-top-width:4px; border-top-color:#714B67; border-radius:6px; background-color:#F5F6F8; max-width:720px">
+<h3 style="margin:0 0 8px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Want this module adapted to your company?</h3>
+<p style="margin:0 0 6px 0; max-width:720px">I adapt it to the way you work, or build the small Odoo feature you are missing.</p>
+<p style="margin:0 0 16px 0; max-width:720px">Fixed price announced before I start, paid on delivery. I answer within one working day, with that price or with the question I still need to set it.</p>
+<p style="margin:0 0 16px 0"><a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20Overdue%20Invoice%20Reminder%20%28Community%29" style="display:inline-block; padding:10px 18px; border:2px solid #714B67; border-radius:6px; background-color:#FFFFFF; color:#714B67; font-weight:600; text-decoration:underline">Describe your need in 2 lines</a></p>
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D">Alexandre Gabriel, independent Odoo developer in Lausanne</p>
+<p style="margin:0 0 10px 0">alexandre@alexandregabriel.ch &#183; <a href="https://alexandregabriel.ch/?v=odoo" style="color:#714B67; font-weight:600; text-decoration:underline">alexandregabriel.ch</a></p>
+<p lang="fr" style="margin:0; font-size:15px; line-height:22px; font-style:italic; color:#55606E">En fran&#231;ais : d&#233;crivez votre besoin en deux lignes. Je vous r&#233;ponds sous un jour ouvr&#233;, avec un prix fixe ou la question qui me manque pour le fixer.</p>
+</div>
+</div>

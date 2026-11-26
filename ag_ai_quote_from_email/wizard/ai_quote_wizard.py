@@ -12,6 +12,8 @@ class AiQuoteWizard(models.TransientModel):
     def action_fill(self):
         self.ensure_one()
         SaleOrder = self.env["sale.order"]
+        if not (self.email_text or "").strip():
+            raise UserError(_("Paste the e-mail of the customer first."))
         data = SaleOrder._ag_ai_parse(self.email_text)
         order = self.order_id
         if not order:

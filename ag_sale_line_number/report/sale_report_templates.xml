@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Quotation / order PDF: the customer sees the same numbers as the salesperson -->
+    <template id="report_saleorder_document_line_number" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//th[@name='th_description']" position="before">
+            <th name="th_line_number" class="text-start">#</th>
+        </xpath>
+        <xpath expr="//td[@name='td_name']" position="before">
+            <td name="td_line_number" class="text-start"><span t-field="line.line_number">1</span></td>
+        </xpath>
+    </template>
+
+    <!-- Online quotation (customer portal) -->
+    <template id="sale_order_portal_content_line_number" inherit_id="sale.sale_order_portal_content">
+        <xpath expr="//th[@id='product_name_header']" position="before">
+            <th class="text-start" id="line_number_header">#</th>
+        </xpath>
+        <xpath expr="//td[@id='product_name']" position="before">
+            <td id="line_number"><span t-field="line.line_number"/></td>
+        </xpath>
+    </template>
+</odoo>

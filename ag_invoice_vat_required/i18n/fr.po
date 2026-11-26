@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ag_invoice_vat_required
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: ag_invoice_vat_required
+#. odoo-python
+#: code:addons/ag_invoice_vat_required/models/account_move.py:0
+msgid ""
+"%(partner)s is a company but has no Tax ID / VAT number.\n"
+"Add it on the contact before posting %(document)s, or tick \"No Tax ID needed\" on the contact if this company has none."
+msgstr ""
+"%(partner)s est une société mais n'a pas de numéro de TVA.\n"
+"Ajoutez-le sur le contact avant de comptabiliser %(document)s, ou cochez « Pas de numéro de TVA » sur le contact si cette société n'en a pas."
+
+#. module: ag_invoice_vat_required
+#: model:ir.model.fields,field_description:ag_invoice_vat_required.field_res_partner__vat_not_required
+#: model:ir.model.fields,field_description:ag_invoice_vat_required.field_res_users__vat_not_required
+msgid "No Tax ID needed"
+msgstr "Pas de numéro de TVA"
+
+#. module: ag_invoice_vat_required
+#: model:ir.model.fields,help:ag_invoice_vat_required.field_res_partner__vat_not_required
+#: model:ir.model.fields,help:ag_invoice_vat_required.field_res_users__vat_not_required
+msgid ""
+"Tick for a company that has no Tax ID / VAT number (small business below the"
+" VAT threshold, association...). Its invoices can then be posted without a "
+"number."
+msgstr ""
+"Cochez pour une société qui n'a pas de numéro de TVA (petite entreprise sous"
+" le seuil de TVA, association...). Ses factures peuvent alors être "
+"comptabilisées sans numéro."
+
+#. module: ag_invoice_vat_required
+#. odoo-python
+#: code:addons/ag_invoice_vat_required/models/account_move.py:0
+msgid "this invoice"
+msgstr "cette facture"

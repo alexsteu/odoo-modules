@@ -1,0 +1,73 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* crm_stale_opportunity_reminder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260908\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-24 20:55+0000\n"
+"PO-Revision-Date: 2026-11-24 20:55+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: crm_stale_opportunity_reminder
+#: model_terms:ir.ui.view,arch_db:crm_stale_opportunity_reminder.res_config_settings_view_form_stale_opportunity
+msgid "After"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.actions.server,name:crm_stale_opportunity_reminder.ir_cron_stale_opportunity_ir_actions_server
+msgid "CRM: forgotten opportunity reminder"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.model,name:crm_stale_opportunity_reminder.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.model,name:crm_stale_opportunity_reminder.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.model.fields,field_description:crm_stale_opportunity_reminder.field_res_company__stale_opportunity_enabled
+#: model:ir.model.fields,field_description:crm_stale_opportunity_reminder.field_res_config_settings__stale_opportunity_enabled
+#: model_terms:ir.ui.view,arch_db:crm_stale_opportunity_reminder.res_config_settings_view_form_stale_opportunity
+msgid "Forgotten opportunity reminder"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.model.fields,field_description:crm_stale_opportunity_reminder.field_res_company__stale_opportunity_days
+#: model:ir.model.fields,field_description:crm_stale_opportunity_reminder.field_res_config_settings__stale_opportunity_days
+msgid "Inactive for (days)"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model:ir.model,name:crm_stale_opportunity_reminder.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#. odoo-python
+#: code:addons/crm_stale_opportunity_reminder/models/crm_lead.py:0
+#, python-format
+msgid "No news for %s days: follow up"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model_terms:ir.ui.view,arch_db:crm_stale_opportunity_reminder.res_config_settings_view_form_stale_opportunity
+msgid ""
+"Schedule a to-do for the salesperson when an opportunity has no activity and"
+" no change"
+msgstr ""
+
+#. module: crm_stale_opportunity_reminder
+#: model_terms:ir.ui.view,arch_db:crm_stale_opportunity_reminder.res_config_settings_view_form_stale_opportunity
+msgid "days without change"
+msgstr ""

@@ -11,10 +11,18 @@
                     <field name="overdue_reminder_enabled"/>
                     <div class="content-group" invisible="not overdue_reminder_enabled">
                         <div class="mt8">
-                            <label for="overdue_reminder_days" string="Every"/>
+                            <label for="overdue_reminder_first_days" string="First reminder"/>
+                            <field name="overdue_reminder_first_days" class="oe_inline"/> days after the due date,
+                        </div>
+                        <div>
+                            <label for="overdue_reminder_days" string="then every"/>
                             <field name="overdue_reminder_days" class="oe_inline"/> days,
                             <label for="overdue_reminder_max" string="at most"/>
                             <field name="overdue_reminder_max" class="oe_inline"/> times
+                        </div>
+                        <div class="mt8">
+                            <label for="overdue_reminder_start_date" string="Only invoices due since"/>
+                            <field name="overdue_reminder_start_date" class="oe_inline"/>
                         </div>
                     </div>
                 </setting>

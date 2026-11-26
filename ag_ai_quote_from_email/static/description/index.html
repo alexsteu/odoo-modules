@@ -1,30 +1,85 @@
-<section class="oe_container">
-  <div class="oe_row oe_spaced">
-    <h2 class="oe_slogan">AI Quotation from E-mail</h2>
-    <h3 class="oe_slogan">Paste a customer e-mail, get the quotation ready to check</h3>
-    <p style="text-align:center;margin-top:8px"><i>Free module by an independent Odoo developer. Need it adapted to your company? <a href="#ag-custom">See below</a>.</i></p>
-    <div class="oe_span12">
-      <ul>
-        <li>Sales &gt; Orders &gt; <b>Quotation from e-mail (AI)</b>: paste the e-mail, the AI finds the customer (or creates it) and your products, with quantities.</li>
-        <li>On a draft quotation, the <b>Fill with AI</b> button adds the requested products to it.</li>
-        <li>Products that are not in your catalogue are listed in a note line, so nothing is lost.</li>
-        <li>Delivery date or special requests are copied into the terms of the quotation.</li>
-        <li>Works with <b>Claude (Anthropic)</b> or <b>ChatGPT (OpenAI)</b>, with your own API key: Sales &gt; Configuration &gt; Settings &gt; AI quotation. You only pay the AI provider, a few cents per e-mail.</li>
-        <li>Always check the quotation before sending it.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="oe_container oe_dark" id="ag-custom">
-  <div class="oe_row oe_spaced" style="text-align:center">
-    <h2 class="oe_slogan">Want this module adapted to your company?</h2>
-    <h3 class="oe_slogan">I adapt it to the way you work, or build the small Odoo feature you are missing.</h3>
-    <p>Odoo 17 and 18, Community or Enterprise. Fixed price announced before I start, paid on delivery.</p>
-    <p style="margin:24px 0">
-      <a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20AI%20Quotation%20from%20E-mail" style="background:#714B67;color:#fff;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:bold">Describe your need in 2 lines, fixed price within 24 h</a>
-    </p>
-    <p>alexandre@alexandregabriel.ch &middot; <a href="https://alexandregabriel.ch/?v=odoo">alexandregabriel.ch</a></p>
-    <p><i>En fran&ccedil;ais : d&eacute;crivez votre besoin en deux lignes, je vous r&eacute;ponds avec un prix fixe sous 24 h.</i></p>
-  </div>
-</section>
+<div style="font-family:Inter,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif; font-size:16px; line-height:26px; font-weight:400; color:#2B323B; text-align:left; max-width:880px; margin:0 auto; padding:8px 0 40px 0">
+<p style="margin:0 0 12px 0; font-size:14px; line-height:20px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#714B67">Free module for Odoo 17 &#183; Sales</p>
+<h2 style="margin:0 0 14px 0; font-size:30px; line-height:38px; font-weight:600; color:#14181D; max-width:800px">Paste a customer's <span style="white-space:nowrap">e-mail</span>: the AI looks for the customer and your products, and fills a draft quotation for you to check.</h2>
+<p style="margin:0 0 14px 0; font-size:18px; line-height:28px; color:#2B323B; max-width:720px">For sales people who retype e-mailed requests into quotations.</p>
+<p style="margin:0 0 14px 0; font-weight:600; color:#14181D; max-width:720px">You need your own API key from Anthropic or OpenAI. The provider bills you for each use.</p>
+<p style="margin:0 0 24px 0; font-size:14px; line-height:22px; color:#55606E; max-width:720px">17 automated tests with simulated AI answers on Odoo 17 Community &#183; screenshots from the Odoo 18 version &#183; English and French &#183; LGPL-3<br/>By Alexandre Gabriel, independent Odoo developer. Need it adapted to your company? <a href="#ag-custom" style="color:#714B67; font-weight:600; text-decoration:underline">See below</a>.</p>
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:668px">
+<img src="screenshot_wizard.png" alt="Odoo window Quotation from e-mail (AI): a pasted customer e-mail asking for 6 office chairs and 4 standing desks, with the buttons Fill the quotation and Cancel." width="650" height="328" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The window before sending: you paste the <span style="white-space:nowrap">e-mail</span>, then click Fill the quotation. No AI result is shown on this page: the module was tested with simulated AI answers only. Demo data, shown in the Odoo 18 version.</p>
+<div style="margin:0 0 28px 0; padding:14px 18px; border:2px solid #714B67; border-radius:6px; background-color:#FAF6F9; max-width:720px">
+<p style="margin:0 0 6px 0; font-weight:600; color:#14181D">Before you install</p>
+<p style="margin:0 0 8px 0">The API key is yours: you get it from Anthropic or OpenAI, and that provider bills you for each use. The module itself is free.</p>
+<p style="margin:0 0 8px 0">What is sent to the provider: the text of the <span style="white-space:nowrap">e-mail</span> you paste, and the list of your sellable products (Odoo ID, internal reference and name, at most 600), with fixed instructions. Nothing else.</p>
+<p style="margin:0 0 0px 0">The module was tested with simulated AI answers only, never with a real API key.</p>
+</div>
+<h3 style="margin:12px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">How it works</h3>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">1.</span> Add your API key.</p>
+<p style="margin:0">Choose the provider, <b style="font-weight:600; color:#14181D">Claude (Anthropic)</b> or <b style="font-weight:600; color:#14181D">ChatGPT (OpenAI)</b>, and paste the key you got from it.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">2.</span> Paste the customer's <span style="white-space:nowrap">e-mail</span>.</p>
+<p style="margin:0">Open Sales &#8250; Orders &#8250; <b style="font-weight:600; color:#14181D">Quotation from <span style="white-space:nowrap">e-mail</span> (AI)</b>, or click <b style="font-weight:600; color:#14181D">Fill with AI</b> on a quotation. Then click <b style="font-weight:600; color:#14181D">Fill the quotation</b>.</p>
+</div>
+<div style="margin:0 0 14px 0; padding:2px 0 2px 16px; border-left-width:3px; border-left-style:solid; border-left-color:#714B67; max-width:704px">
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D"><span style="color:#714B67">3.</span> Check the draft quotation.</p>
+<p style="margin:0">From the menu, the customer is searched by <span style="white-space:nowrap">e-mail</span> address, then by name, and created if unknown. From a quotation, its customer is kept. Products that are not in your catalogue are listed in a note line that starts with <b style="font-weight:600; color:#14181D">Not found in your products, to check</b>.</p>
+</div>
+<div style="margin:24px 0 0 0">
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:537px">
+<img src="screenshot_no_key.png" alt="Odoo dialog Invalid Operation, with the message quoted in the caption and a Close button." width="519" height="178" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">Without a key, Odoo says where to add it: &#8220;Add your AI API key in Sales &gt; Configuration &gt; Settings &gt; AI quotation.&#8221; Demo data, shown in the Odoo 18 version.</p>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Settings</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Where: <b style="font-weight:600; color:#14181D">Sales &#8250; Configuration &#8250; Settings &#8250; Quotations &amp; Orders &#8250; AI quotation</b></p>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 16px 0; font-size:15px; line-height:22px; color:#2B323B">
+<thead><tr><th scope="col" style="text-align:left; vertical-align:bottom; width:28%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Setting</th><th scope="col" style="text-align:left; vertical-align:bottom; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">What it does</th><th scope="col" style="text-align:left; vertical-align:bottom; width:19%; padding:8px 14px 8px 0; border-bottom:2px solid #2B323B; font-size:14px; line-height:20px; font-weight:600; color:#14181D">Default</th></tr></thead>
+<tbody>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">AI provider</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Claude (Anthropic) or ChatGPT (OpenAI).</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Claude (Anthropic)</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">AI API key</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Your own key from the provider. Without it, nothing is sent.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Empty</td></tr>
+<tr><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">AI model</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Leave empty to use the default model of the module.</td><td style="text-align:left; vertical-align:top; padding:10px 14px 10px 0; border-bottom:1px solid #D0D5DD">Empty</td></tr>
+</tbody></table>
+<div style="margin:16px 0 0 0">
+<div style="margin:0 0 8px 0; padding:8px; border:1px solid #D0D5DD; border-radius:8px; background-color:#F5F6F8; max-width:419px">
+<img src="screenshot_settings.png" alt="Odoo Sales settings, block AI quotation: AI provider Claude (Anthropic), an empty AI API key, AI model default." width="401" height="192" class="img-fluid" style="display:block; max-width:100%; height:auto; border:1px solid #D0D5DD; border-radius:3px"/>
+</div>
+<p style="margin:0 0 28px 0; font-size:14px; line-height:20px; color:#55606E; max-width:720px">The settings, in Sales: provider, your API key, and the model (empty = the default one). Demo data, shown in the Odoo 18 version.</p>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Good to know</h3>
+<div style="margin:0 0 8px 0; padding:16px 20px 8px 20px; border:1px solid #D9C27A; border-left-width:4px; border-left-color:#8A5A00; border-radius:6px; background-color:#FFF9E8; max-width:720px">
+<ul style="margin:0; padding:0 0 0 18px">
+<li style="margin:0 0 8px 0">Tested with simulated AI answers only, never with a real API key. Try it on a test database first.</li>
+<li style="margin:0 0 8px 0">An AI can be wrong. Always check the customer, the products and the quantities before you send the quotation.</li>
+<li style="margin:0 0 8px 0">With more than 600 sellable products, only 600 are sent, starting with those named in the <span style="white-space:nowrap">e-mail</span>.</li>
+<li style="margin:0 0 8px 0">Odoo shows a clear message when the key is missing or refused, when the provider is overloaded or does not answer in time, and when the answer is cut.</li>
+</ul>
+</div>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Compatibility</h3>
+<table style="width:100%; max-width:720px; border-collapse:collapse; margin:4px 0 8px 0; font-size:15px; line-height:22px; color:#2B323B">
+<tbody>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo 17 Community. Developed and tested with 17 automated tests for this module, 182 for the whole suite of 18 modules. In these tests the AI answers are simulated.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Screenshots</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Taken in the Odoo 18 version of this module. The screens of the Odoo 17 version were opened in a browser: what the module adds is there, and no error was shown.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Not tested on</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Odoo Enterprise.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Odoo 18</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">An 18.0 version exists on its own branch.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Needs</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">The Odoo app Sales.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Outside service</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">Anthropic or OpenAI, with your own API key. Paid by you to the provider.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Languages</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">English and French. No German translation.</td></tr>
+<tr><th scope="row" style="text-align:left; vertical-align:top; width:30%; padding:8px 14px 8px 0; border-bottom:1px solid #D0D5DD; font-weight:600; color:#14181D">Licence</th><td style="text-align:left; vertical-align:top; padding:8px 0 8px 0; border-bottom:1px solid #D0D5DD">LGPL-3. Free.</td></tr>
+</tbody></table>
+<h3 style="margin:40px 0 12px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Upgrading from version 17.0.1.0.x</h3>
+<p style="margin:0 0 12px 0; max-width:720px">Replace the code, then upgrade on the command line, before anyone signs in, all the modules of this suite that are installed, in one go:</p>
+<p style="margin:0 0 12px 0; padding:10px 14px; border:1px solid #D0D5DD; border-radius:6px; background-color:#F5F6F8; font-family:Menlo,Consolas,'Liberation Mono',monospace; font-size:14px; line-height:22px; color:#14181D; max-width:690px">odoo-bin -d &lt;database&gt; -u &lt;module&gt;,&lt;module&gt; --stop-after-init</p>
+<p style="margin:0 0 12px 0; max-width:720px">Three modules of the suite add fields to contacts and companies. Until they are upgraded, Odoo refuses the sign-in.</p>
+<div id="ag-custom" style="margin:44px 0 0 0; padding:22px 24px 20px 24px; border:1px solid #D0D5DD; border-top-width:4px; border-top-color:#714B67; border-radius:6px; background-color:#F5F6F8; max-width:720px">
+<h3 style="margin:0 0 8px 0; font-size:21px; line-height:28px; font-weight:600; color:#14181D">Want this module adapted to your company?</h3>
+<p style="margin:0 0 6px 0; max-width:720px">I adapt it to the way you work, or build the small Odoo feature you are missing.</p>
+<p style="margin:0 0 16px 0; max-width:720px">Fixed price announced before I start, paid on delivery. I answer within one working day, with that price or with the question I still need to set it.</p>
+<p style="margin:0 0 16px 0"><a href="mailto:alexandre@alexandregabriel.ch?subject=Odoo%20-%20AI%20Quotation%20from%20E-mail" style="display:inline-block; padding:10px 18px; border:2px solid #714B67; border-radius:6px; background-color:#FFFFFF; color:#714B67; font-weight:600; text-decoration:underline">Describe your need in 2 lines</a></p>
+<p style="margin:0 0 2px 0; font-weight:600; color:#14181D">Alexandre Gabriel, independent Odoo developer in Lausanne</p>
+<p style="margin:0 0 10px 0">alexandre@alexandregabriel.ch &#183; <a href="https://alexandregabriel.ch/?v=odoo" style="color:#714B67; font-weight:600; text-decoration:underline">alexandregabriel.ch</a></p>
+<p lang="fr" style="margin:0; font-size:15px; line-height:22px; font-style:italic; color:#55606E">En fran&#231;ais : d&#233;crivez votre besoin en deux lignes. Je vous r&#233;ponds sous un jour ouvr&#233;, avec un prix fixe ou la question qui me manque pour le fixer.</p>
+</div>
+</div>

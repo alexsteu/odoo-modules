@@ -1,7 +1,7 @@
 {
     "name": "CRM Opportunity Age",
     "summary": "Show how many days each opportunity has been open in the CRM list",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.1.0",
     "category": "Sales/CRM",
     "author": "Alexandre Gabriel",
     "website": "https://alexandregabriel.ch/?v=odoo",
